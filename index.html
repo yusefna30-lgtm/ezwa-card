@@ -178,9 +178,9 @@
         }
 
         .brand-slogan {
-            font-size: 10px;
+            font-size: 9.5px;
             color: var(--gold-light);
-            letter-spacing: 0.8px;
+            letter-spacing: 0.5px;
             font-weight: 500;
             text-transform: uppercase;
         }
@@ -655,7 +655,7 @@
                 <a href="#" class="social-item-col" id="linkInsta" target="_blank">
                     <div class="social-icon-box">📸</div>
                     <span class="social-name">إنستغرام</span>
-                    <span class="social-handle" id="uiInsta">nabilalnamer</span>
+                    <span class="social-handle" id="uiInsta">alnamer.nabeel</span>
                 </a>
                 <a href="#" class="social-item-col" id="linkSnap" target="_blank">
                     <div class="social-icon-box">👻</div>
@@ -670,7 +670,7 @@
                         <div class="box-icon">✉️</div>
                         <div class="box-titles">
                             <span class="box-title">البريد الإلكتروني</span>
-                            <span class="box-subtitle">Email Us</span>
+                            <span class="box-subtitle">Ibn.alnamer@gmail.com</span>
                         </div>
                     </div>
                     <div class="box-arrow">‹</div>
@@ -681,7 +681,7 @@
                         <div class="box-icon">📍</div>
                         <div class="box-titles">
                             <span class="box-title">الموقع</span>
-                            <span class="box-subtitle">Google Maps</span>
+                            <span class="box-subtitle">حي الديرة، الرياض</span>
                         </div>
                     </div>
                     <div class="box-arrow">‹</div>
@@ -744,10 +744,10 @@
             <div class="form-group"><label>الرقم الأول:</label><input type="text" id="inputPhone1" value="+966 50 277 7884"></div>
             <div class="form-group"><label>الرقم الثاني:</label><input type="text" id="inputPhone2" value="+966 56 056 4719"></div>
             <div class="form-group"><label>سناب شات:</label><input type="text" id="inputSnap" value="nabilalnamer"></div>
-            <div class="form-group"><label>إنستغرام:</label><input type="text" id="inputInsta" value="nabilalnamer"></div>
+            <div class="form-group"><label>إنستغرام:</label><input type="text" id="inputInsta" value="alnamer.nabeel"></div>
             <div class="form-group"><label>منصة X:</label><input type="text" id="inputX" value="nabilalnamer"></div>
-            <div class="form-group"><label>البريد:</label><input type="email" id="inputEmail" value="info@nabilalnamer.sa"></div>
-            <div class="form-group"><label>رابط الخريطة:</label><input type="text" id="inputMap" value="https://maps.app.goo.gl"></div>
+            <div class="form-group"><label>البريد الإلكتروني:</label><input type="email" id="inputEmail" value="Ibn.alnamer@gmail.com"></div>
+            <div class="form-group"><label>رابط الخريطة:</label><input type="text" id="inputMap" value="https://www.google.com/maps/dir/?api=1&destination=24.6356470116456%2C46.716702606949"></div>
             <button class="modal-save-btn" onclick="saveCustomData()">حفظ التعديلات</button>
         </div>
     </div>
@@ -775,10 +775,10 @@
             phone1: "+966 50 277 7884",
             phone2: "+966 56 056 4719",
             snapchat: "nabilalnamer",
-            instagram: "nabilalnamer",
+            instagram: "alnamer.nabeel",
             x: "nabilalnamer",
-            email: "info@nabilalnamer.sa",
-            mapUrl: "https://maps.app.goo.gl",
+            email: "Ibn.alnamer@gmail.com",
+            mapUrl: "https://www.google.com/maps/dir/?api=1&destination=24.6356470116456%2C46.716702606949",
             cardUrl: window.location.href
         };
 
@@ -790,11 +790,11 @@
             document.getElementById('uiSnap').innerText = EZWA_CONFIG.snapchat;
             document.getElementById('uiInsta').innerText = EZWA_CONFIG.instagram;
             document.getElementById('uiX').innerText = EZWA_CONFIG.x;
-            document.getElementById('uiFooterBrand').innerText = EZWA_CONFIG.brandAr;
+            document.getElementById('uiFooterBrand').innerText = "NABIL ALNAMER";
 
-            document.getElementById('linkSnap').href = `https://snapchat.com/add/${EZWA_CONFIG.snapchat}`;
-            document.getElementById('linkInsta').href = `https://instagram.com/${EZWA_CONFIG.instagram}`;
-            document.getElementById('linkX').href = `https://x.com/${EZWA_CONFIG.x}`;
+            document.getElementById('linkSnap').href = "https://www.snapchat.com/add/" + EZWA_CONFIG.snapchat + "?share_id=83FM5o5vRls&locale=ar-SA";
+            document.getElementById('linkInsta').href = "https://www.instagram.com/" + EZWA_CONFIG.instagram + "/?vrfl=bnV2Nm9vNGxheno5";
+            document.getElementById('linkX').href = "https://x.com/" + EZWA_CONFIG.x;
 
             const qrContainer = document.getElementById('qrContainer');
             qrContainer.innerHTML = "";
@@ -854,7 +854,7 @@
 
         function downloadVCard(e) {
             e.preventDefault();
-            const vCardData = `BEGIN:VCARD\nVERSION:3.0\nFN:${EZWA_CONFIG.brandAr}\nTITLE:${EZWA_CONFIG.role}\nTEL:${EZWA_CONFIG.phone1.replace(/[^0-9+]/g, '')}\nTEL:${EZWA_CONFIG.phone2.replace(/[^0-9+]/g, '')}\nEMAIL:${EZWA_CONFIG.email}\nEND:VCARD`;
+            const vCardData = `BEGIN:VCARD\nVERSION:3.0\nFN:${EZWA_CONFIG.brandAr}\nTITLE:${EZWA_CONFIG.role}\nNOTE:حي الديرة، الرياض - الرمز البريدي 12633 - فرع البطحاء\nTEL:${EZWA_CONFIG.phone1.replace(/[^0-9+]/g, '')}\nTEL:${EZWA_CONFIG.phone2.replace(/[^0-9+]/g, '')}\nEMAIL:${EZWA_CONFIG.email}\nEND:VCARD`;
             const blob = new Blob([vCardData], { type: 'text/vcard' });
             const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
