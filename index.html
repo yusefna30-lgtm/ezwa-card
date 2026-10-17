@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نبيل النمر | Nabil Alnamer - الكارت الرقمي الفاخر</title>
+    <title>نبيل النمر - الكارت الرقمي الفاخر</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -153,28 +153,17 @@
 
         .brand-name-ar {
             font-family: 'Amiri', serif;
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 700;
             color: #fff;
-            line-height: 1.1;
-        }
-
-        .brand-name-en {
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--text-muted);
-            letter-spacing: 2.8px;
-            text-transform: uppercase;
-            margin-top: 3px;
-            direction: ltr;
-            text-align: right;
+            line-height: 1.15;
         }
 
         .brand-role {
-            font-size: 11.5px;
+            font-size: 12px;
             color: var(--gold-primary);
             font-weight: 700;
-            margin-top: 5px;
+            margin-top: 6px;
         }
 
         /* عبارة الابتكار مكان الخط المستقيم */
@@ -628,7 +617,6 @@
             <div class="brand-left-group">
                 <div class="brand-titles">
                     <h1 class="brand-name-ar" id="uiBrandName">نبيل النمر</h1>
-                    <span class="brand-name-en" id="uiBrandEn">NABIL ALNAMER</span>
                     <span class="brand-role" id="uiRole">اختصاصي تسويق</span>
                 </div>
                 <div class="monogram-box">
@@ -751,7 +739,6 @@
                 <button class="modal-close" onclick="closeCustomizeModal()">×</button>
             </div>
             <div class="form-group"><label>الاسم (عربي):</label><input type="text" id="inputBrandAr" value="نبيل النمر"></div>
-            <div class="form-group"><label>الاسم (إنجليزي):</label><input type="text" id="inputBrandEn" value="NABIL ALNAMER"></div>
             <div class="form-group"><label>المسمى الوظيفي:</label><input type="text" id="inputRole" value="اختصاصي تسويق"></div>
             <div class="form-group"><label>العبارة الفاصلة:</label><input type="text" id="inputSlogan" value="اول مبتكر دمج تقنية ال NFC بتيشيرت ستريت وير"></div>
             <div class="form-group"><label>الرقم الأول:</label><input type="text" id="inputPhone1" value="+966 50 277 7884"></div>
@@ -783,7 +770,6 @@
     <script>
         let EZWA_CONFIG = {
             brandAr: "نبيل النمر",
-            brandEn: "NABIL ALNAMER",
             role: "اختصاصي تسويق",
             slogan: "اول مبتكر دمج تقنية ال NFC بتيشيرت ستريت وير",
             phone1: "+966 50 277 7884",
@@ -798,14 +784,13 @@
 
         function updateUI() {
             document.getElementById('uiBrandName').innerText = EZWA_CONFIG.brandAr;
-            document.getElementById('uiBrandEn').innerText = EZWA_CONFIG.brandEn;
             document.getElementById('uiRole').innerText = EZWA_CONFIG.role;
             document.getElementById('uiSlogan').innerText = EZWA_CONFIG.slogan;
 
             document.getElementById('uiSnap').innerText = EZWA_CONFIG.snapchat;
             document.getElementById('uiInsta').innerText = EZWA_CONFIG.instagram;
             document.getElementById('uiX').innerText = EZWA_CONFIG.x;
-            document.getElementById('uiFooterBrand').innerText = EZWA_CONFIG.brandEn;
+            document.getElementById('uiFooterBrand').innerText = EZWA_CONFIG.brandAr;
 
             document.getElementById('linkSnap').href = `https://snapchat.com/add/${EZWA_CONFIG.snapchat}`;
             document.getElementById('linkInsta').href = `https://instagram.com/${EZWA_CONFIG.instagram}`;
@@ -899,7 +884,6 @@
 
         function openCustomizeModal() { 
             document.getElementById('inputBrandAr').value = EZWA_CONFIG.brandAr;
-            document.getElementById('inputBrandEn').value = EZWA_CONFIG.brandEn;
             document.getElementById('inputRole').value = EZWA_CONFIG.role;
             document.getElementById('inputSlogan').value = EZWA_CONFIG.slogan;
             document.getElementById('inputPhone1').value = EZWA_CONFIG.phone1;
@@ -915,7 +899,6 @@
 
         function saveCustomData() {
             EZWA_CONFIG.brandAr = document.getElementById('inputBrandAr').value;
-            EZWA_CONFIG.brandEn = document.getElementById('inputBrandEn').value;
             EZWA_CONFIG.role = document.getElementById('inputRole').value;
             EZWA_CONFIG.slogan = document.getElementById('inputSlogan').value;
             EZWA_CONFIG.phone1 = document.getElementById('inputPhone1').value;
