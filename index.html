@@ -7,12 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #050505;
+            --bg-deep: #030305;
             --gold-primary: #dfb15b;
-            --gold-light: #f5d69c;
+            --gold-light: #f7e0a8;
             --text-main: #ffffff;
-            --text-muted: #9e9ea8;
-            --card-width: min(420px, 92vw);
+            --text-muted: #a0a0ab;
+            --card-width: min(420px, 94vw);
         }
 
         * {
@@ -44,103 +44,106 @@
             height: 100vh;
             z-index: -1;
             background: 
-                radial-gradient(circle at 75% 25%, rgba(223, 177, 91, 0.15) 0%, transparent 45%),
-                radial-gradient(circle at 15% 85%, rgba(180, 130, 60, 0.1) 0%, transparent 50%),
-                linear-gradient(135deg, #020203 0%, #0a0a0d 50%, #010102 100%);
+                radial-gradient(circle at 80% 20%, rgba(223, 177, 91, 0.22) 0%, transparent 45%),
+                radial-gradient(circle at 20% 85%, rgba(160, 110, 40, 0.15) 0%, transparent 55%),
+                linear-gradient(135deg, #020203 0%, #0d0d14 50%, #010102 100%);
             overflow: hidden;
         }
 
-        /* إضاءات بصرية خلف الزجاج لتعزيز الواقعية */
-        .ambient-glow-1 {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: rgba(223, 177, 91, 0.12);
-            filter: blur(70px);
-            top: 5%;
-            left: 10%;
-            z-index: -1;
-            border-radius: 50%;
-        }
-        .ambient-glow-2 {
+        /* إضاءات ذهبية خلفية محيطة بالبطاقة الزجاجية */
+        .ambient-glow-top {
             position: absolute;
             width: 350px;
             height: 350px;
-            background: rgba(223, 177, 91, 0.08);
-            filter: blur(80px);
-            bottom: 5%;
-            right: 10%;
-            z-index: -1;
+            background: radial-gradient(circle, rgba(223, 177, 91, 0.2) 0%, transparent 70%);
             border-radius: 50%;
+            top: -5%;
+            right: 15%;
+            filter: blur(50px);
+            z-index: -1;
         }
 
-        /* حاوية الكارت: لوح زجاجي سميك مطابق تماماً للصورة (Obsidian Glass Slab) */
+        .ambient-glow-bottom {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(223, 177, 91, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -10%;
+            left: 10%;
+            filter: blur(60px);
+            z-index: -1;
+        }
+
+        /* حاوية الكارت: لوح زجاجي سميك وشفاف تماماً (Obsidian Crystal Glass Slab) */
         .ezwa-card-container {
             width: var(--card-width);
-            min-height: 860px;
-            background: rgba(12, 12, 15, 0.65);
-            backdrop-filter: blur(24px) saturate(180%);
-            -webkit-backdrop-filter: blur(24px) saturate(180%);
-            border-radius: 38px;
+            min-height: 870px;
+            background: rgba(14, 14, 18, 0.55);
+            backdrop-filter: blur(28px) saturate(200%);
+            -webkit-backdrop-filter: blur(28px) saturate(200%);
+            border-radius: 40px;
             
-            /* حواف زجاجية سميكة مشطوفة مع توهج ذهبي محيط */
-            border: 1.5px solid rgba(223, 177, 91, 0.25);
+            /* حواف زجاجية مشطوفة مع توهج ذهبي خارجي وداخلي مذهل */
+            border: 1.5px solid rgba(223, 177, 91, 0.35);
             box-shadow: 
-                0 40px 100px rgba(0, 0, 0, 0.95),
-                0 0 50px rgba(223, 177, 91, 0.12),
-                inset 0 1px 3px rgba(255, 255, 255, 0.3),
+                0 45px 110px rgba(0, 0, 0, 0.95),
+                0 0 60px rgba(223, 177, 91, 0.15),
+                inset 0 1px 3px rgba(255, 255, 255, 0.4),
                 inset 0 -2px 6px rgba(0, 0, 0, 0.95),
-                inset 2px 0 3px rgba(223, 177, 91, 0.2),
-                inset -2px 0 3px rgba(223, 177, 91, 0.2);
+                inset 2px 0 4px rgba(223, 177, 91, 0.25),
+                inset -2px 0 4px rgba(223, 177, 91, 0.25);
                 
             position: relative;
-            padding: 34px 22px 24px 22px;
+            padding: 36px 22px 24px 22px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        /* إضاءة انعكاسية حادة على الحافة العلوية واليسرى للزجاج */
+        /* لمعة قطرية حادة تعبر الزجاج الكريستالي */
         .ezwa-card-container::before {
             content: '';
             position: absolute;
-            inset: 0;
-            border-radius: 38px;
-            padding: 1.5px;
-            background: linear-gradient(135deg, rgba(223, 177, 91, 0.7) 0%, rgba(255, 255, 255, 0.15) 35%, rgba(0, 0, 0, 0.8) 100%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 100%);
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
             pointer-events: none;
         }
 
-        /* 1. الترويسة العلوية المطابقة تماماً للصورة */
+        /* 1. الترويسة العلوية المطابقة للمرجع تماماً (مثبتة الاتجاه لضمان تطابق الأماكن) */
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            margin-bottom: 22px;
-            border-bottom: 1px solid rgba(223, 177, 91, 0.15);
+            margin-bottom: 24px;
+            border-bottom: 1px solid rgba(223, 177, 91, 0.2);
             padding-bottom: 16px;
+            direction: ltr; /* تثبيت لضمان مطابقة اليمين واليسار للصورة المرجعية */
         }
 
         .brand-left-group {
             display: flex;
             align-items: center;
             gap: 14px;
+            direction: rtl;
         }
 
         .monogram-box {
             width: 52px;
             height: 52px;
             border-radius: 14px;
-            background: linear-gradient(145deg, rgba(20, 20, 24, 0.9), rgba(5, 5, 8, 0.95));
-            border: 1px solid rgba(223, 177, 91, 0.4);
+            background: linear-gradient(145deg, rgba(20, 20, 26, 0.9), rgba(5, 5, 8, 0.95));
+            border: 1px solid rgba(223, 177, 91, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.5), inset 0 1px 2px rgba(223, 177, 91, 0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.6), inset 0 1px 3px rgba(223, 177, 91, 0.3);
         }
 
         .monogram-symbol {
@@ -153,12 +156,13 @@
         .divider-vertical {
             width: 1px;
             height: 38px;
-            background: linear-gradient(to bottom, transparent, rgba(223, 177, 91, 0.5), transparent);
+            background: linear-gradient(to bottom, transparent, rgba(223, 177, 91, 0.6), transparent);
         }
 
         .brand-titles {
             display: flex;
             flex-direction: column;
+            text-align: right;
         }
 
         .brand-name-ar {
@@ -177,6 +181,7 @@
             letter-spacing: 3.5px;
             text-transform: uppercase;
             margin-top: 2px;
+            direction: ltr;
         }
 
         .brand-slogan {
@@ -184,15 +189,15 @@
             color: var(--gold-primary);
             letter-spacing: 0.5px;
             margin-top: 3px;
-            opacity: 0.95;
         }
 
-        /* QR Code & NFC Area (أعلى اليمين) */
+        /* QR Code & NFC Area (أعلى اليمين تماماً كالمرجع) */
         .qr-nfc-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
             cursor: pointer;
+            direction: rtl;
         }
 
         .qr-frame {
@@ -201,7 +206,7 @@
             background: #fff;
             padding: 3px;
             border-radius: 8px;
-            border: 1px solid rgba(223, 177, 91, 0.4);
+            border: 1px solid rgba(223, 177, 91, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -214,12 +219,11 @@
             object-fit: contain;
         }
 
-        /* زوايا الإطار للـ QR تماماً مثل الصورة المرجعية */
         .qr-frame::after {
             content: '';
             position: absolute;
             inset: -4px;
-            border: 1px dashed rgba(223, 177, 91, 0.4);
+            border: 1px dashed rgba(223, 177, 91, 0.5);
             border-radius: 10px;
             pointer-events: none;
         }
@@ -241,6 +245,7 @@
             color: var(--text-muted);
             letter-spacing: 0.5px;
             text-transform: uppercase;
+            direction: ltr;
         }
 
         /* 2. جسم الكارت والأزرار */
@@ -250,14 +255,15 @@
             gap: 11px;
             flex-grow: 1;
             justify-content: center;
+            direction: rtl;
         }
 
-        /* أزرار الاتصال والواتساب العريضة المطابقة للصورة */
+        /* أزرار الاتصال والواتساب العريضة المطابقة تماماً للصورة */
         .action-pill-btn {
             width: 100%;
             height: 60px;
-            background: rgba(18, 18, 22, 0.6);
-            border: 1px solid rgba(223, 177, 91, 0.22);
+            background: rgba(20, 20, 26, 0.65);
+            border: 1px solid rgba(223, 177, 91, 0.3);
             border-radius: 30px;
             display: flex;
             align-items: center;
@@ -266,17 +272,17 @@
             text-decoration: none;
             color: var(--text-main);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
         }
 
         .action-pill-btn:hover {
-            background: rgba(28, 28, 35, 0.8);
-            border-color: rgba(223, 177, 91, 0.5);
+            background: rgba(30, 30, 40, 0.85);
+            border-color: rgba(223, 177, 91, 0.6);
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.5), 0 0 15px rgba(223, 177, 91, 0.1);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.5), 0 0 15px rgba(223, 177, 91, 0.15);
         }
 
-        .btn-left-content {
+        .btn-right-content {
             display: flex;
             align-items: center;
             gap: 14px;
@@ -286,8 +292,8 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(223, 177, 91, 0.25) 0%, rgba(223, 177, 91, 0.05) 70%);
-            border: 1px solid rgba(223, 177, 91, 0.45);
+            background: radial-gradient(circle, rgba(223, 177, 91, 0.3) 0%, rgba(223, 177, 91, 0.08) 70%);
+            border: 1px solid rgba(223, 177, 91, 0.55);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -298,6 +304,7 @@
         .btn-text-group {
             display: flex;
             flex-direction: column;
+            text-align: right;
         }
 
         .btn-title {
@@ -318,7 +325,7 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -326,18 +333,17 @@
             font-size: 14px;
         }
 
-        /* شبكة التواصل الاجتماعي الأفقية الثلاثية (سناب، إنستغرام، X) */
+        /* شبكة التواصل الاجتماعي الثلاثية (سناب، إنستغرام، X) المطابقة للصورة */
         .social-grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
             width: 100%;
-            margin: 2px 0;
         }
 
         .social-item-col {
-            background: rgba(18, 18, 22, 0.6);
-            border: 1px solid rgba(223, 177, 91, 0.22);
+            background: rgba(20, 20, 26, 0.65);
+            border: 1px solid rgba(223, 177, 91, 0.3);
             border-radius: 20px;
             padding: 12px 6px;
             display: flex;
@@ -349,8 +355,8 @@
         }
 
         .social-item-col:hover {
-            background: rgba(28, 28, 35, 0.8);
-            border-color: rgba(223, 177, 91, 0.5);
+            background: rgba(30, 30, 40, 0.85);
+            border-color: rgba(223, 177, 91, 0.6);
             transform: translateY(-2px);
         }
 
@@ -358,8 +364,8 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(223, 177, 91, 0.2) 0%, rgba(223, 177, 91, 0.05) 70%);
-            border: 1px solid rgba(223, 177, 91, 0.4);
+            background: radial-gradient(circle, rgba(223, 177, 91, 0.25) 0%, rgba(223, 177, 91, 0.05) 70%);
+            border: 1px solid rgba(223, 177, 91, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -383,9 +389,10 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            direction: ltr;
         }
 
-        /* شبكة الأزرار الثنائية السفلية */
+        /* شبكة الأزرار الثنائية */
         .dual-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -394,8 +401,8 @@
         }
 
         .action-box-btn {
-            background: rgba(18, 18, 22, 0.6);
-            border: 1px solid rgba(223, 177, 91, 0.22);
+            background: rgba(20, 20, 26, 0.65);
+            border: 1px solid rgba(223, 177, 91, 0.3);
             border-radius: 20px;
             padding: 12px 14px;
             display: flex;
@@ -407,8 +414,8 @@
         }
 
         .action-box-btn:hover {
-            background: rgba(28, 28, 35, 0.8);
-            border-color: rgba(223, 177, 91, 0.5);
+            background: rgba(30, 30, 40, 0.85);
+            border-color: rgba(223, 177, 91, 0.6);
             transform: translateY(-2px);
         }
 
@@ -422,8 +429,8 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: rgba(223, 177, 91, 0.12);
-            border: 1px solid rgba(223, 177, 91, 0.35);
+            background: rgba(223, 177, 91, 0.15);
+            border: 1px solid rgba(223, 177, 91, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -434,6 +441,7 @@
         .box-titles {
             display: flex;
             flex-direction: column;
+            text-align: right;
         }
 
         .box-title {
@@ -446,6 +454,8 @@
             font-size: 9.5px;
             color: var(--text-muted);
             margin-top: 1px;
+            direction: ltr;
+            text-align: right;
         }
 
         .box-arrow {
@@ -453,23 +463,25 @@
             color: var(--text-muted);
         }
 
-        /* 3. التذييل السفلي المطابق تماماً للصورة */
+        /* 3. التذييل السفلي المطابق للصورة تماماً */
         .card-footer {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 6px;
             margin-top: 16px;
-            border-top: 1px solid rgba(223, 177, 91, 0.15);
+            border-top: 1px solid rgba(223, 177, 91, 0.2);
             padding-top: 12px;
+            direction: rtl;
         }
 
         .footer-brand {
             font-family: 'Amiri', serif;
-            font-size: 11px;
+            font-size: 11.5px;
             color: var(--text-muted);
             letter-spacing: 3px;
             text-transform: uppercase;
+            direction: ltr;
         }
 
         .customize-trigger-btn {
@@ -482,7 +494,7 @@
             opacity: 0.85;
         }
 
-        /* النوافذ العائمة والتنبيهات */
+        /* النوافذ العائمة */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -497,7 +509,7 @@
 
         .modal-content {
             background: #111115;
-            border: 1px solid rgba(223, 177, 91, 0.4);
+            border: 1px solid rgba(223, 177, 91, 0.5);
             border-radius: 24px;
             width: 100%;
             max-width: 430px;
@@ -505,6 +517,8 @@
             overflow-y: auto;
             padding: 24px;
             box-shadow: 0 25px 50px rgba(0,0,0,0.9);
+            direction: rtl;
+            text-align: right;
         }
 
         .modal-header {
@@ -549,6 +563,8 @@
             padding: 10px 14px;
             color: #fff;
             font-size: 13px;
+            direction: ltr;
+            text-align: right;
         }
 
         .modal-save-btn {
@@ -570,7 +586,7 @@
             left: 50%;
             transform: translateX(-50%) translateY(100px);
             background: rgba(20, 20, 26, 0.95);
-            border: 1px solid rgba(223, 177, 91, 0.4);
+            border: 1px solid rgba(223, 177, 91, 0.5);
             color: #fff;
             padding: 12px 24px;
             border-radius: 30px;
@@ -586,30 +602,14 @@
 </head>
 <body>
 
-    <!-- الخلفية السينمائية تماماً كالمرجع -->
     <div class="cinema-background">
-        <div class="ambient-glow-1"></div>
-        <div class="ambient-glow-2"></div>
+        <div class="ambient-glow-top"></div>
+        <div class="ambient-glow-bottom"></div>
     </div>
 
-    <!-- الكارت الزجاجي السميك المطابق تماماً -->
     <div class="ezwa-card-container" id="ezwaCard">
         
-        <!-- الترويسة العلوية -->
         <div class="card-header">
-            <div class="brand-left-group">
-                <div class="monogram-box">
-                    <span class="monogram-symbol">ع</span>
-                </div>
-                <div class="divider-vertical"></div>
-                <div class="brand-titles">
-                    <h1 class="brand-name-ar" id="uiBrandName">عَــزْوَة</h1>
-                    <span class="brand-name-en" id="uiBrandEn">E Z W A</span>
-                    <span class="brand-slogan" id="uiSlogan">أصالة .. ثقة .. تميّز</span>
-                </div>
-            </div>
-
-            <!-- QR Code و NFC (أعلى اليمين) -->
             <div class="qr-nfc-wrapper" onclick="openQrModal()" title="اضغط لعرض رمز QR">
                 <div class="qr-frame" id="qrContainer"></div>
                 <div class="nfc-indicator">
@@ -617,68 +617,64 @@
                     <span class="nfc-text">NFC</span>
                 </div>
             </div>
+
+            <div class="brand-left-group">
+                <div class="brand-titles">
+                    <h1 class="brand-name-ar" id="uiBrandName">عَــزْوَة</h1>
+                    <span class="brand-name-en" id="uiBrandEn">E Z W A</span>
+                    <span class="brand-slogan" id="uiSlogan">أصالة .. ثقة .. تميّز</span>
+                </div>
+                <div class="divider-vertical"></div>
+                <div class="monogram-box">
+                    <span class="monogram-symbol">ع</span>
+                </div>
+            </div>
         </div>
 
-        <!-- محتوى الأزرار -->
         <div class="card-body">
-            
-            <!-- زر الاتصال -->
             <a href="#" class="action-pill-btn" onclick="handleCall(event)">
-                <div class="btn-left-content">
+                <div class="btn-arrow">‹</div>
+                <div class="btn-right-content">
                     <div class="btn-icon-circle">📞</div>
                     <div class="btn-text-group">
                         <span class="btn-title">إتصال مباشر</span>
                         <span class="btn-subtitle" id="uiPhone">+966 50 277 7884 | +966 56 056 4719</span>
                     </div>
                 </div>
-                <div class="btn-arrow">‹</div>
             </a>
 
-            <!-- زر الواتساب -->
             <a href="#" class="action-pill-btn" onclick="handleWhatsapp(event)">
-                <div class="btn-left-content">
+                <div class="btn-arrow">‹</div>
+                <div class="btn-right-content">
                     <div class="btn-icon-circle" style="color: #4ade80;">💬</div>
                     <div class="btn-text-group">
                         <span class="btn-title">واتساب</span>
                         <span class="btn-subtitle" id="uiWhatsapp">+966 50 277 7884 | +966 56 056 4719</span>
                     </div>
                 </div>
-                <div class="btn-arrow">‹</div>
             </a>
 
-            <!-- شبكة التواصل الاجتماعي الثلاثية المطابقة للصورة (سناب، إنستغرام، X) -->
             <div class="social-grid-3">
-                <a href="#" class="social-item-col" id="linkSnap" target="_blank">
-                    <div class="social-icon-box">👻</div>
-                    <span class="social-name">سناب شات</span>
-                    <span class="social-handle" id="uiSnap">ezwa_sa</span>
+                <a href="#" class="social-item-col" id="linkX" target="_blank">
+                    <div class="social-icon-box">𝕏</div>
+                    <span class="social-name">منصة X</span>
+                    <span class="social-handle" id="uiX">ezwa_sa</span>
                 </a>
                 <a href="#" class="social-item-col" id="linkInsta" target="_blank">
                     <div class="social-icon-box">📸</div>
                     <span class="social-name">إنستغرام</span>
                     <span class="social-handle" id="uiInsta">ezwa.sa</span>
                 </a>
-                <a href="#" class="social-item-col" id="linkX" target="_blank">
-                    <div class="social-icon-box">𝕏</div>
-                    <span class="social-name">منصة X</span>
-                    <span class="social-handle" id="uiX">ezwa_sa</span>
+                <a href="#" class="social-item-col" id="linkSnap" target="_blank">
+                    <div class="social-icon-box">👻</div>
+                    <span class="social-name">سناب شات</span>
+                    <span class="social-handle" id="uiSnap">ezwa_sa</span>
                 </a>
             </div>
 
-            <!-- شبكة الأزرار الثنائية (الموقع والبريد) -->
             <div class="dual-grid">
-                <a href="#" class="action-box-btn" onclick="handleMap(event)">
-                    <div class="box-content-right">
-                        <div class="box-icon">📍</div>
-                        <div class="box-titles">
-                            <span class="box-title">الموقع</span>
-                            <span class="box-subtitle">Google Maps</span>
-                        </div>
-                    </div>
-                    <span class="box-arrow">‹</span>
-                </a>
-
                 <a href="#" class="action-box-btn" onclick="handleEmail(event)">
+                    <div class="box-arrow">‹</div>
                     <div class="box-content-right">
                         <div class="box-icon">✉️</div>
                         <div class="box-titles">
@@ -686,24 +682,23 @@
                             <span class="box-subtitle">Email Us</span>
                         </div>
                     </div>
-                    <span class="box-arrow">‹</span>
+                </a>
+
+                <a href="#" class="action-box-btn" onclick="handleMap(event)">
+                    <div class="box-arrow">‹</div>
+                    <div class="box-content-right">
+                        <div class="box-icon">📍</div>
+                        <div class="box-titles">
+                            <span class="box-title">الموقع</span>
+                            <span class="box-subtitle">Google Maps</span>
+                        </div>
+                    </div>
                 </a>
             </div>
 
-            <!-- شبكة الأزرار الثنائية السفلية (حفظ الجهة ومشاركة الكارت) -->
             <div class="dual-grid">
-                <a href="#" class="action-box-btn" onclick="downloadVCard(event)">
-                    <div class="box-content-right">
-                        <div class="box-icon">👤</div>
-                        <div class="box-titles">
-                            <span class="box-title">حفظ جهة الاتصال</span>
-                            <span class="box-subtitle">Add to Contacts</span>
-                        </div>
-                    </div>
-                    <span class="box-arrow">‹</span>
-                </a>
-
                 <a href="#" class="action-box-btn" onclick="shareCard(event)">
+                    <div class="box-arrow">‹</div>
                     <div class="box-content-right">
                         <div class="box-icon">🔗</div>
                         <div class="box-titles">
@@ -711,13 +706,21 @@
                             <span class="box-subtitle">Share Card</span>
                         </div>
                     </div>
-                    <span class="box-arrow">‹</span>
+                </a>
+
+                <a href="#" class="action-box-btn" onclick="downloadVCard(event)">
+                    <div class="box-arrow">‹</div>
+                    <div class="box-content-right">
+                        <div class="box-icon">👤</div>
+                        <div class="box-titles">
+                            <span class="box-title">حفظ جهة الاتصال</span>
+                            <span class="box-subtitle">Add to Contacts</span>
+                        </div>
+                    </div>
                 </a>
             </div>
-
         </div>
 
-        <!-- التذييل السفلي المطابق للصورة (الاسم في الأسفل بين خطين) -->
         <div class="card-footer">
             <span class="footer-brand" id="uiFooterBrand">E Z W A  L U X U R Y</span>
             <button class="customize-trigger-btn" onclick="openCustomizeModal()">⚙️ تخصيص بيانات العلامة</button>
