@@ -149,38 +149,39 @@
             display: flex;
             flex-direction: column;
             text-align: right;
+            width: 175px; /* عرض ثابت لضبط التناسق التام بين العربي والإنجليزي */
         }
 
-        /* تمديد الاسم العربي ليتطابق مع عرض الاسم الإنجليزي باستخدام text-justify و letter-spacing */
         .brand-name-ar {
             font-family: 'Amiri', serif;
             font-size: 21px;
             font-weight: 700;
             color: #fff;
             line-height: 1.1;
-            letter-spacing: 5px; /* تمديد الحروف العربية */
-            text-align-last: justify;
+            display: flex;
+            justify-content: space-between; /* توزيع الكلمات لتملأ العرض بشكل متناسق ومنضبط */
         }
 
         .brand-name-en {
             font-size: 11px;
             font-weight: 600;
             color: var(--text-muted);
-            letter-spacing: 2.8px;
+            letter-spacing: 2.2px;
             text-transform: uppercase;
             margin-top: 4px;
             direction: ltr;
             text-align: right;
+            width: 100%;
         }
 
         .brand-role {
             font-size: 11.5px;
             color: var(--gold-primary);
             font-weight: 700;
-            margin-top: 4px;
+            margin-top: 5px;
         }
 
-        /* مكان الخط الذهبي المستقيم (وضع عبارة الابتكار هنا بمسافة وتنسيق فاخر) */
+        /* عبارة الابتكار مكان الخط المستقيم */
         .slogan-divider-area {
             width: 100%;
             text-align: center;
@@ -619,7 +620,6 @@
 
     <div class="ezwa-card-container" id="ezwaCard">
         
-        <!-- الترويسة العلوية -->
         <div class="card-header">
             <div class="qr-nfc-wrapper" onclick="openQrModal()" title="اضغط لعرض رمز QR">
                 <div class="qr-frame" id="qrContainer"></div>
@@ -631,7 +631,10 @@
 
             <div class="brand-left-group">
                 <div class="brand-titles">
-                    <h1 class="brand-name-ar" id="uiBrandName">نبيل النمر</h1>
+                    <h1 class="brand-name-ar" id="uiBrandName">
+                        <span>نبيل</span>
+                        <span>النمر</span>
+                    </h1>
                     <span class="brand-name-en" id="uiBrandEn">NABIL ALNAMER</span>
                     <span class="brand-role" id="uiRole">اختصاصي تسويق</span>
                 </div>
@@ -641,7 +644,6 @@
             </div>
         </div>
 
-        <!-- مكان الخط الذهبي المستقيم (عبارة الابتكار) -->
         <div class="slogan-divider-area">
             <span class="brand-slogan" id="uiSlogan">اول مبتكر دمج تقنية ال NFC بتيشيرت ستريت وير</span>
         </div>
@@ -802,7 +804,11 @@
         };
 
         function updateUI() {
-            document.getElementById('uiBrandName').innerText = EZWA_CONFIG.brandAr;
+            // توزيع الكلمات ليتناسب الاسم العربي مع الاسم الإنجليزي تماماً
+            const nameParts = EZWA_CONFIG.brandAr.split(' ');
+            const arContainer = document.getElementById('uiBrandName');
+            arContainer.innerHTML = `<span>${nameParts[0] || ''}</span><span>${nameParts.slice(1).join(' ') || ''}</span>`;
+
             document.getElementById('uiBrandEn').innerText = EZWA_CONFIG.brandEn;
             document.getElementById('uiRole').innerText = EZWA_CONFIG.role;
             document.getElementById('uiSlogan').innerText = EZWA_CONFIG.slogan;
