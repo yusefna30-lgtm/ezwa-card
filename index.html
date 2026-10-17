@@ -3,21 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عَزْوة | EZWA - الكارت الكريستالي الفاخر</title>
+    <title>عَزْوة | EZWA - الكارت الرقمي الفاخر</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #030305;
-            /* زجاج كريستالي نقي وشفاف تماماً مع تمويه خلفي عالي */
-            --crystal-bg: rgba(255, 255, 255, 0.035);
-            --crystal-border-top: rgba(255, 255, 255, 0.45);
-            --crystal-border-side: rgba(255, 255, 255, 0.12);
-            --crystal-border-bottom: rgba(255, 255, 255, 0.05);
-            --gold-primary: #e6be6a;
-            --gold-light: #f7e0a8;
+            --bg-deep: #050505;
+            --gold-primary: #dfb15b;
+            --gold-light: #f5d69c;
             --text-main: #ffffff;
-            --text-muted: #c0c0cc;
-            --card-width: min(430px, 94vw);
+            --text-muted: #9e9ea8;
+            --card-width: min(420px, 92vw);
         }
 
         * {
@@ -37,10 +32,10 @@
             align-items: center;
             overflow-x: hidden;
             position: relative;
-            padding: 15px 0;
+            padding: 20px 0;
         }
 
-        /* خلفية سينمائية مع إضاءات خلفية لتظهر بوضوح عبر الزجاج الكريستالي الشفاف */
+        /* الخلفية السينمائية تماماً مثل الصورة المرجعية */
         .cinema-background {
             position: fixed;
             top: 0;
@@ -49,110 +44,116 @@
             height: 100vh;
             z-index: -1;
             background: 
-                radial-gradient(circle at 20% 20%, rgba(230, 190, 106, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(180, 130, 50, 0.08) 0%, transparent 50%),
-                linear-gradient(135deg, #020203 0%, #0d0d12 50%, #010102 100%);
+                radial-gradient(circle at 75% 25%, rgba(223, 177, 91, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 15% 85%, rgba(180, 130, 60, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #020203 0%, #0a0a0d 50%, #010102 100%);
             overflow: hidden;
         }
 
-        /* حركات ضوئية خلف الزجاج لتعزيز الشفافية والانكسار */
-        .light-beam {
+        /* إضاءات بصرية خلف الزجاج لتعزيز الواقعية */
+        .ambient-glow-1 {
             position: absolute;
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, rgba(230, 190, 106, 0.2) 0%, transparent 70%);
-            border-radius: 50%;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            filter: blur(50px);
+            background: rgba(223, 177, 91, 0.12);
+            filter: blur(70px);
+            top: 5%;
+            left: 10%;
             z-index: -1;
+            border-radius: 50%;
+        }
+        .ambient-glow-2 {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: rgba(223, 177, 91, 0.08);
+            filter: blur(80px);
+            bottom: 5%;
+            right: 10%;
+            z-index: -1;
+            border-radius: 50%;
         }
 
-        /* حاوية الكارت: قطعة كريستال مصقولة الحواف (Crystal Glass Slab) */
+        /* حاوية الكارت: لوح زجاجي سميك مطابق تماماً للصورة (Obsidian Glass Slab) */
         .ezwa-card-container {
             width: var(--card-width);
-            min-height: 840px;
-            background: var(--crystal-bg);
-            backdrop-filter: blur(28px) saturate(210%);
-            -webkit-backdrop-filter: blur(28px) saturate(210%);
-            border-radius: 36px;
-            /* حواف كريستالية مشطوفة متعددة المستويات لتأثير 3D حقيقي */
-            border-top: 2px solid var(--crystal-border-top);
-            border-left: 1.5px solid var(--crystal-border-side);
-            border-right: 1.5px solid var(--crystal-border-side);
-            border-bottom: 1.5px solid var(--crystal-border-bottom);
+            min-height: 860px;
+            background: rgba(12, 12, 15, 0.65);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border-radius: 38px;
+            
+            /* حواف زجاجية سميكة مشطوفة مع توهج ذهبي محيط */
+            border: 1.5px solid rgba(223, 177, 91, 0.25);
             box-shadow: 
-                0 35px 70px rgba(0, 0, 0, 0.85),
-                inset 0 2px 4px rgba(255, 255, 255, 0.4),
-                inset 0 -2px 6px rgba(0, 0, 0, 0.9),
-                inset 2px 0 3px rgba(255, 255, 255, 0.15),
-                inset -2px 0 3px rgba(255, 255, 255, 0.15);
+                0 40px 100px rgba(0, 0, 0, 0.95),
+                0 0 50px rgba(223, 177, 91, 0.12),
+                inset 0 1px 3px rgba(255, 255, 255, 0.3),
+                inset 0 -2px 6px rgba(0, 0, 0, 0.95),
+                inset 2px 0 3px rgba(223, 177, 91, 0.2),
+                inset -2px 0 3px rgba(223, 177, 91, 0.2);
+                
             position: relative;
-            padding: 34px 24px 26px 24px;
+            padding: 34px 22px 24px 22px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        /* انعكاس ضوئي قطري حاد (Specular Glint) يعبر سطح الكريستال */
+        /* إضاءة انعكاسية حادة على الحافة العلوية واليسرى للزجاج */
         .ezwa-card-container::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.01) 45%, transparent 100%);
-            border-top-left-radius: 36px;
-            border-top-right-radius: 36px;
+            inset: 0;
+            border-radius: 38px;
+            padding: 1.5px;
+            background: linear-gradient(135deg, rgba(223, 177, 91, 0.7) 0%, rgba(255, 255, 255, 0.15) 35%, rgba(0, 0, 0, 0.8) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
             pointer-events: none;
         }
 
-        /* 1. الترويسة العلوية */
+        /* 1. الترويسة العلوية المطابقة تماماً للصورة */
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            margin-bottom: 24px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            padding-bottom: 18px;
+            margin-bottom: 22px;
+            border-bottom: 1px solid rgba(223, 177, 91, 0.15);
+            padding-bottom: 16px;
         }
 
-        .brand-logo-area {
+        .brand-left-group {
             display: flex;
             align-items: center;
             gap: 14px;
         }
 
         .monogram-box {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             border-radius: 14px;
-            background: rgba(255, 255, 255, 0.06);
-            border-top: 1px solid rgba(255, 255, 255, 0.35);
-            border-left: 1px solid rgba(255, 255, 255, 0.2);
-            border-right: 1px solid rgba(255, 255, 255, 0.2);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+            background: linear-gradient(145deg, rgba(20, 20, 24, 0.9), rgba(5, 5, 8, 0.95));
+            border: 1px solid rgba(223, 177, 91, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.4);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5), inset 0 1px 2px rgba(223, 177, 91, 0.2);
         }
 
         .monogram-symbol {
             font-family: 'Amiri', serif;
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 700;
-            color: var(--gold-light);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            color: var(--gold-primary);
         }
 
         .divider-vertical {
             width: 1px;
-            height: 35px;
-            background: linear-gradient(to bottom, transparent, rgba(230, 190, 106, 0.6), transparent);
+            height: 38px;
+            background: linear-gradient(to bottom, transparent, rgba(223, 177, 91, 0.5), transparent);
         }
 
         .brand-titles {
@@ -162,61 +163,49 @@
 
         .brand-name-ar {
             font-family: 'Amiri', serif;
-            font-size: 22px;
+            font-size: 23px;
             font-weight: 700;
             color: #fff;
             letter-spacing: 0.5px;
             line-height: 1.2;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.6);
         }
 
         .brand-name-en {
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 500;
             color: var(--text-muted);
-            letter-spacing: 3px;
+            letter-spacing: 3.5px;
             text-transform: uppercase;
             margin-top: 2px;
         }
 
         .brand-slogan {
-            font-size: 10.5px;
-            color: var(--gold-light);
+            font-size: 10px;
+            color: var(--gold-primary);
             letter-spacing: 0.5px;
             margin-top: 3px;
+            opacity: 0.95;
         }
 
-        /* QR Code & NFC Section */
+        /* QR Code & NFC Area (أعلى اليمين) */
         .qr-nfc-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 8px 10px;
-            border-radius: 12px;
-            border-top: 1px solid rgba(255, 255, 255, 0.25);
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: inset 0 1px 2px rgba(255,255,255,0.2);
-        }
-
-        .qr-nfc-wrapper:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(230, 190, 106, 0.4);
         }
 
         .qr-frame {
-            width: 52px;
-            height: 52px;
+            width: 56px;
+            height: 56px;
             background: #fff;
             padding: 3px;
             border-radius: 8px;
+            border: 1px solid rgba(223, 177, 91, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         .qr-frame img {
@@ -225,26 +214,36 @@
             object-fit: contain;
         }
 
+        /* زوايا الإطار للـ QR تماماً مثل الصورة المرجعية */
+        .qr-frame::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border: 1px dashed rgba(223, 177, 91, 0.4);
+            border-radius: 10px;
+            pointer-events: none;
+        }
+
         .nfc-indicator {
             display: flex;
             align-items: center;
             gap: 4px;
-            margin-top: 4px;
+            margin-top: 6px;
         }
 
         .nfc-icon {
-            font-size: 10px;
-            color: var(--gold-light);
+            font-size: 9px;
+            color: var(--gold-primary);
         }
 
         .nfc-text {
-            font-size: 8.5px;
+            font-size: 8px;
             color: var(--text-muted);
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
 
-        /* 2. الأزرار الكريستالية الشفافة التفاعلية */
+        /* 2. جسم الكارت والأزرار */
         .card-body {
             display: flex;
             flex-direction: column;
@@ -253,31 +252,28 @@
             justify-content: center;
         }
 
+        /* أزرار الاتصال والواتساب العريضة المطابقة للصورة */
         .action-pill-btn {
             width: 100%;
-            height: 58px;
-            background: rgba(255, 255, 255, 0.045);
-            border-top: 1.5px solid rgba(255, 255, 255, 0.3);
-            border-left: 1px solid rgba(255, 255, 255, 0.12);
-            border-right: 1px solid rgba(255, 255, 255, 0.12);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-            border-radius: 29px;
+            height: 60px;
+            background: rgba(18, 18, 22, 0.6);
+            border: 1px solid rgba(223, 177, 91, 0.22);
+            border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 18px 0 6px;
+            padding: 0 18px 0 8px;
             text-decoration: none;
             color: var(--text-main);
-            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-            backdrop-filter: blur(12px);
-            box-shadow: inset 0 1px 2px rgba(255,255,255,0.25), 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
         .action-pill-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(230, 190, 106, 0.5);
+            background: rgba(28, 28, 35, 0.8);
+            border-color: rgba(223, 177, 91, 0.5);
             transform: translateY(-2px);
-            box-shadow: inset 0 1px 3px rgba(255,255,255,0.4), 0 6px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.5), 0 0 15px rgba(223, 177, 91, 0.1);
         }
 
         .btn-left-content {
@@ -290,17 +286,13 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: rgba(230, 190, 106, 0.12);
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
-            border-left: 1px solid rgba(230, 190, 106, 0.4);
-            border-right: 1px solid rgba(230, 190, 106, 0.4);
-            border-bottom: 1px solid rgba(0,0,0,0.4);
+            background: radial-gradient(circle, rgba(223, 177, 91, 0.25) 0%, rgba(223, 177, 91, 0.05) 70%);
+            border: 1px solid rgba(223, 177, 91, 0.45);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold-light);
+            color: var(--gold-primary);
             font-size: 18px;
-            box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
         }
 
         .btn-text-group {
@@ -309,14 +301,13 @@
         }
 
         .btn-title {
-            font-size: 14.5px;
+            font-size: 14px;
             font-weight: 700;
             color: #fff;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
         .btn-subtitle {
-            font-size: 12px;
+            font-size: 11.5px;
             color: var(--text-muted);
             direction: ltr;
             text-align: right;
@@ -324,10 +315,10 @@
         }
 
         .btn-arrow {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.04);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -335,21 +326,18 @@
             font-size: 14px;
         }
 
-        /* شبكة التواصل الاجتماعي الشفافة */
-        .social-grid {
+        /* شبكة التواصل الاجتماعي الأفقية الثلاثية (سناب، إنستغرام، X) */
+        .social-grid-3 {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 10px;
             width: 100%;
             margin: 2px 0;
         }
 
-        .social-item {
-            background: rgba(255, 255, 255, 0.045);
-            border-top: 1.5px solid rgba(255, 255, 255, 0.3);
-            border-left: 1px solid rgba(255, 255, 255, 0.12);
-            border-right: 1px solid rgba(255, 255, 255, 0.12);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        .social-item-col {
+            background: rgba(18, 18, 22, 0.6);
+            border: 1px solid rgba(223, 177, 91, 0.22);
             border-radius: 20px;
             padding: 12px 6px;
             display: flex;
@@ -358,32 +346,26 @@
             text-decoration: none;
             color: var(--text-main);
             transition: all 0.3s ease;
-            backdrop-filter: blur(12px);
-            box-shadow: inset 0 1px 2px rgba(255,255,255,0.25);
         }
 
-        .social-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(230, 190, 106, 0.5);
+        .social-item-col:hover {
+            background: rgba(28, 28, 35, 0.8);
+            border-color: rgba(223, 177, 91, 0.5);
             transform: translateY(-2px);
         }
 
         .social-icon-box {
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            background: rgba(230, 190, 106, 0.12);
-            border-top: 1px solid rgba(255, 255, 255, 0.35);
-            border-left: 1px solid rgba(230, 190, 106, 0.3);
-            border-right: 1px solid rgba(230, 190, 106, 0.3);
-            border-bottom: 1px solid rgba(0,0,0,0.4);
+            background: radial-gradient(circle, rgba(223, 177, 91, 0.2) 0%, rgba(223, 177, 91, 0.05) 70%);
+            border: 1px solid rgba(223, 177, 91, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold-light);
+            color: var(--gold-primary);
             font-size: 16px;
             margin-bottom: 6px;
-            box-shadow: inset 0 1px 2px rgba(255,255,255,0.25);
         }
 
         .social-name {
@@ -403,7 +385,7 @@
             white-space: nowrap;
         }
 
-        /* شبكة الأزرار الثنائية الشفافة */
+        /* شبكة الأزرار الثنائية السفلية */
         .dual-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -412,26 +394,21 @@
         }
 
         .action-box-btn {
-            background: rgba(255, 255, 255, 0.045);
-            border-top: 1.5px solid rgba(255, 255, 255, 0.3);
-            border-left: 1px solid rgba(255, 255, 255, 0.12);
-            border-right: 1px solid rgba(255, 255, 255, 0.12);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+            background: rgba(18, 18, 22, 0.6);
+            border: 1px solid rgba(223, 177, 91, 0.22);
             border-radius: 20px;
-            padding: 13px 14px;
+            padding: 12px 14px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             text-decoration: none;
             color: var(--text-main);
             transition: all 0.3s ease;
-            backdrop-filter: blur(12px);
-            box-shadow: inset 0 1px 2px rgba(255,255,255,0.25);
         }
 
         .action-box-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(230, 190, 106, 0.5);
+            background: rgba(28, 28, 35, 0.8);
+            border-color: rgba(223, 177, 91, 0.5);
             transform: translateY(-2px);
         }
 
@@ -445,17 +422,13 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: rgba(230, 190, 106, 0.12);
-            border-top: 1px solid rgba(255, 255, 255, 0.35);
-            border-left: 1px solid rgba(230, 190, 106, 0.3);
-            border-right: 1px solid rgba(230, 190, 106, 0.3);
-            border-bottom: 1px solid rgba(0,0,0,0.4);
+            background: rgba(223, 177, 91, 0.12);
+            border: 1px solid rgba(223, 177, 91, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold-light);
+            color: var(--gold-primary);
             font-size: 15px;
-            box-shadow: inset 0 1px 2px rgba(255,255,255,0.25);
         }
 
         .box-titles {
@@ -464,13 +437,13 @@
         }
 
         .box-title {
-            font-size: 12.5px;
+            font-size: 12px;
             font-weight: 700;
             color: #fff;
         }
 
         .box-subtitle {
-            font-size: 10px;
+            font-size: 9.5px;
             color: var(--text-muted);
             margin-top: 1px;
         }
@@ -480,36 +453,36 @@
             color: var(--text-muted);
         }
 
-        /* 3. التذييل */
+        /* 3. التذييل السفلي المطابق تماماً للصورة */
         .card-footer {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
-            margin-top: 18px;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-            padding-top: 14px;
+            gap: 6px;
+            margin-top: 16px;
+            border-top: 1px solid rgba(223, 177, 91, 0.15);
+            padding-top: 12px;
         }
 
         .footer-brand {
             font-family: 'Amiri', serif;
-            font-size: 12.5px;
+            font-size: 11px;
             color: var(--text-muted);
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
 
         .customize-trigger-btn {
             background: transparent;
             border: none;
-            color: var(--gold-light);
-            font-size: 11px;
+            color: var(--gold-primary);
+            font-size: 10.5px;
             cursor: pointer;
             text-decoration: underline;
             opacity: 0.85;
         }
 
-        /* النوافذ العائمة */
+        /* النوافذ العائمة والتنبيهات */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -523,14 +496,11 @@
         }
 
         .modal-content {
-            background: rgba(18, 18, 24, 0.95);
-            border-top: 1.5px solid rgba(230, 190, 106, 0.5);
-            border-left: 1px solid rgba(255, 255, 255, 0.15);
-            border-right: 1px solid rgba(255, 255, 255, 0.15);
-            border-bottom: 1px solid rgba(0,0,0,0.8);
+            background: #111115;
+            border: 1px solid rgba(223, 177, 91, 0.4);
             border-radius: 24px;
             width: 100%;
-            max-width: 450px;
+            max-width: 430px;
             max-height: 90vh;
             overflow-y: auto;
             padding: 24px;
@@ -542,14 +512,14 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
             padding-bottom: 12px;
         }
 
         .modal-title {
             font-size: 16px;
             font-weight: 700;
-            color: var(--gold-light);
+            color: var(--gold-primary);
         }
 
         .modal-close {
@@ -573,8 +543,8 @@
 
         .form-group input {
             width: 100%;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.15);
+            background: #1a1a20;
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 10px;
             padding: 10px 14px;
             color: #fff;
@@ -583,7 +553,7 @@
 
         .modal-save-btn {
             width: 100%;
-            background: linear-gradient(135deg, var(--gold-light), #99752b);
+            background: linear-gradient(135deg, var(--gold-primary), #99752b);
             color: #000;
             font-weight: 700;
             border: none;
@@ -599,8 +569,8 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
-            background: rgba(18, 18, 24, 0.95);
-            border: 1px solid rgba(230, 190, 106, 0.5);
+            background: rgba(20, 20, 26, 0.95);
+            border: 1px solid rgba(223, 177, 91, 0.4);
             color: #fff;
             padding: 12px 24px;
             border-radius: 30px;
@@ -616,14 +586,18 @@
 </head>
 <body>
 
+    <!-- الخلفية السينمائية تماماً كالمرجع -->
     <div class="cinema-background">
-        <div class="light-beam"></div>
+        <div class="ambient-glow-1"></div>
+        <div class="ambient-glow-2"></div>
     </div>
 
+    <!-- الكارت الزجاجي السميك المطابق تماماً -->
     <div class="ezwa-card-container" id="ezwaCard">
         
+        <!-- الترويسة العلوية -->
         <div class="card-header">
-            <div class="brand-logo-area">
+            <div class="brand-left-group">
                 <div class="monogram-box">
                     <span class="monogram-symbol">ع</span>
                 </div>
@@ -635,7 +609,8 @@
                 </div>
             </div>
 
-            <div class="qr-nfc-wrapper" onclick="openQrModal()">
+            <!-- QR Code و NFC (أعلى اليمين) -->
+            <div class="qr-nfc-wrapper" onclick="openQrModal()" title="اضغط لعرض رمز QR">
                 <div class="qr-frame" id="qrContainer"></div>
                 <div class="nfc-indicator">
                     <span class="nfc-icon">◈</span>
@@ -644,52 +619,53 @@
             </div>
         </div>
 
+        <!-- محتوى الأزرار -->
         <div class="card-body">
+            
+            <!-- زر الاتصال -->
             <a href="#" class="action-pill-btn" onclick="handleCall(event)">
                 <div class="btn-left-content">
                     <div class="btn-icon-circle">📞</div>
                     <div class="btn-text-group">
                         <span class="btn-title">إتصال مباشر</span>
-                        <span class="btn-subtitle" id="uiPhone">+966 50 277 7884</span>
+                        <span class="btn-subtitle" id="uiPhone">+966 50 277 7884 | +966 56 056 4719</span>
                     </div>
                 </div>
                 <div class="btn-arrow">‹</div>
             </a>
 
+            <!-- زر الواتساب -->
             <a href="#" class="action-pill-btn" onclick="handleWhatsapp(event)">
                 <div class="btn-left-content">
                     <div class="btn-icon-circle" style="color: #4ade80;">💬</div>
                     <div class="btn-text-group">
-                        <span class="btn-title">مراسلة واتساب</span>
-                        <span class="btn-subtitle" id="uiWhatsapp">+966 50 277 7884</span>
+                        <span class="btn-title">واتساب</span>
+                        <span class="btn-subtitle" id="uiWhatsapp">+966 50 277 7884 | +966 56 056 4719</span>
                     </div>
                 </div>
                 <div class="btn-arrow">‹</div>
             </a>
 
-            <div class="social-grid">
-                <a href="#" class="social-item" id="linkSnap" target="_blank">
+            <!-- شبكة التواصل الاجتماعي الثلاثية المطابقة للصورة (سناب، إنستغرام، X) -->
+            <div class="social-grid-3">
+                <a href="#" class="social-item-col" id="linkSnap" target="_blank">
                     <div class="social-icon-box">👻</div>
                     <span class="social-name">سناب شات</span>
                     <span class="social-handle" id="uiSnap">ezwa_sa</span>
                 </a>
-                <a href="#" class="social-item" id="linkInsta" target="_blank">
+                <a href="#" class="social-item-col" id="linkInsta" target="_blank">
                     <div class="social-icon-box">📸</div>
                     <span class="social-name">إنستغرام</span>
                     <span class="social-handle" id="uiInsta">ezwa.sa</span>
                 </a>
-                <a href="#" class="social-item" id="linkTikTok" target="_blank">
-                    <div class="social-icon-box">🎵</div>
-                    <span class="social-name">تيك توك</span>
-                    <span class="social-handle" id="uiTikTok">ezwa.sa</span>
-                </a>
-                <a href="#" class="social-item" id="linkX" target="_blank">
+                <a href="#" class="social-item-col" id="linkX" target="_blank">
                     <div class="social-icon-box">𝕏</div>
                     <span class="social-name">منصة X</span>
                     <span class="social-handle" id="uiX">ezwa_sa</span>
                 </a>
             </div>
 
+            <!-- شبكة الأزرار الثنائية (الموقع والبريد) -->
             <div class="dual-grid">
                 <a href="#" class="action-box-btn" onclick="handleMap(event)">
                     <div class="box-content-right">
@@ -701,11 +677,12 @@
                     </div>
                     <span class="box-arrow">‹</span>
                 </a>
+
                 <a href="#" class="action-box-btn" onclick="handleEmail(event)">
                     <div class="box-content-right">
                         <div class="box-icon">✉️</div>
                         <div class="box-titles">
-                            <span class="box-title">البريد</span>
+                            <span class="box-title">البريد الإلكتروني</span>
                             <span class="box-subtitle">Email Us</span>
                         </div>
                     </div>
@@ -713,17 +690,19 @@
                 </a>
             </div>
 
+            <!-- شبكة الأزرار الثنائية السفلية (حفظ الجهة ومشاركة الكارت) -->
             <div class="dual-grid">
                 <a href="#" class="action-box-btn" onclick="downloadVCard(event)">
                     <div class="box-content-right">
                         <div class="box-icon">👤</div>
                         <div class="box-titles">
-                            <span class="box-title">حفظ الجهة</span>
-                            <span class="box-subtitle">vCard Contact</span>
+                            <span class="box-title">حفظ جهة الاتصال</span>
+                            <span class="box-subtitle">Add to Contacts</span>
                         </div>
                     </div>
                     <span class="box-arrow">‹</span>
                 </a>
+
                 <a href="#" class="action-box-btn" onclick="shareCard(event)">
                     <div class="box-content-right">
                         <div class="box-icon">🔗</div>
@@ -735,10 +714,12 @@
                     <span class="box-arrow">‹</span>
                 </a>
             </div>
+
         </div>
 
+        <!-- التذييل السفلي المطابق للصورة (الاسم في الأسفل بين خطين) -->
         <div class="card-footer">
-            <span class="footer-brand" id="uiFooterBrand">EZWA LUXURY BRAND</span>
+            <span class="footer-brand" id="uiFooterBrand">E Z W A  L U X U R Y</span>
             <button class="customize-trigger-btn" onclick="openCustomizeModal()">⚙️ تخصيص بيانات العلامة</button>
         </div>
 
@@ -754,10 +735,9 @@
             <div class="form-group"><label>اسم العلامة (عربي):</label><input type="text" id="inputBrandAr" value="عَــزْوَة"></div>
             <div class="form-group"><label>اسم العلامة (إنجليزي):</label><input type="text" id="inputBrandEn" value="E Z W A"></div>
             <div class="form-group"><label>الشعار:</label><input type="text" id="inputSlogan" value="أصالة .. ثقة .. تميّز"></div>
-            <div class="form-group"><label>الهاتف:</label><input type="text" id="inputPhone" value="+966502777884"></div>
+            <div class="form-group"><label>الأرقام (الهاتف):</label><input type="text" id="inputPhone" value="+966 50 277 7884"></div>
             <div class="form-group"><label>سناب شات:</label><input type="text" id="inputSnap" value="ezwa_sa"></div>
             <div class="form-group"><label>إنستغرام:</label><input type="text" id="inputInsta" value="ezwa.sa"></div>
-            <div class="form-group"><label>تيك توك:</label><input type="text" id="inputTikTok" value="ezwa.sa"></div>
             <div class="form-group"><label>منصة X:</label><input type="text" id="inputX" value="ezwa_sa"></div>
             <div class="form-group"><label>البريد:</label><input type="email" id="inputEmail" value="info@ezwa.sa"></div>
             <div class="form-group"><label>رابط الخريطة:</label><input type="text" id="inputMap" value="https://maps.app.goo.gl"></div>
@@ -765,7 +745,7 @@
         </div>
     </div>
 
-    <!-- نافذة QR -->
+    <!-- نافذة QR الكبيرة -->
     <div class="modal-overlay" id="qrModal" onclick="closeQrModal()">
         <div class="modal-content" style="text-align: center; max-width: 320px;" onclick="event.stopPropagation()">
             <div class="modal-header">
@@ -785,11 +765,10 @@
             brandAr: "عَــزْوَة",
             brandEn: "E Z W A",
             slogan: "أصالة .. ثقة .. تميّز",
-            phone: "+966 50 277 7884",
+            phoneDisplay: "+966 50 277 7884 | +966 56 056 4719",
             phoneRaw: "+966502777884",
             snapchat: "ezwa_sa",
             instagram: "ezwa.sa",
-            tiktok: "ezwa.sa",
             x: "ezwa_sa",
             email: "info@ezwa.sa",
             mapUrl: "https://maps.app.goo.gl",
@@ -800,25 +779,24 @@
             document.getElementById('uiBrandName').innerText = EZWA_CONFIG.brandAr;
             document.getElementById('uiBrandEn').innerText = EZWA_CONFIG.brandEn;
             document.getElementById('uiSlogan').innerText = EZWA_CONFIG.slogan;
-            document.getElementById('uiPhone').innerText = EZWA_CONFIG.phone;
-            document.getElementById('uiWhatsapp').innerText = EZWA_CONFIG.phone;
+            document.getElementById('uiPhone').innerText = EZWA_CONFIG.phoneDisplay;
+            document.getElementById('uiWhatsapp').innerText = EZWA_CONFIG.phoneDisplay;
             document.getElementById('uiSnap').innerText = EZWA_CONFIG.snapchat;
             document.getElementById('uiInsta').innerText = EZWA_CONFIG.instagram;
-            document.getElementById('uiTikTok').innerText = EZWA_CONFIG.tiktok;
             document.getElementById('uiX').innerText = EZWA_CONFIG.x;
+            document.getElementById('uiFooterBrand').innerText = `${EZWA_CONFIG.brandEn} LUXURY BRAND`;
 
             document.getElementById('linkSnap').href = `https://snapchat.com/add/${EZWA_CONFIG.snapchat}`;
             document.getElementById('linkInsta').href = `https://instagram.com/${EZWA_CONFIG.instagram}`;
-            document.getElementById('linkTikTok').href = `https://tiktok.com/@${EZWA_CONFIG.tiktok}`;
             document.getElementById('linkX').href = `https://x.com/${EZWA_CONFIG.x}`;
 
             const qrContainer = document.getElementById('qrContainer');
             qrContainer.innerHTML = "";
             new QRCode(qrContainer, {
                 text: EZWA_CONFIG.cardUrl,
-                width: 46,
-                height: 46,
-                colorDark: "#030305",
+                width: 48,
+                height: 48,
+                colorDark: "#050505",
                 colorLight: "#ffffff",
                 correctLevel: QRCode.CorrectLevel.M
             });
@@ -850,7 +828,7 @@
                 navigator.share({ title: EZWA_CONFIG.brandAr, url: EZWA_CONFIG.cardUrl });
             } else {
                 navigator.clipboard.writeText(EZWA_CONFIG.cardUrl);
-                showToast("تم نسخ الرابط");
+                showToast("تم نسخ الرابط إلى الحافظة");
             }
         }
 
@@ -862,24 +840,34 @@
         }
         function closeQrModal() { document.getElementById('qrModal').style.display = 'none'; }
 
-        function openCustomizeModal() { document.getElementById('customizeModal').style.display = 'flex'; }
+        function openCustomizeModal() { 
+            document.getElementById('inputBrandAr').value = EZWA_CONFIG.brandAr;
+            document.getElementById('inputBrandEn').value = EZWA_CONFIG.brandEn;
+            document.getElementById('inputSlogan').value = EZWA_CONFIG.slogan;
+            document.getElementById('inputPhone').value = EZWA_CONFIG.phoneDisplay;
+            document.getElementById('inputSnap').value = EZWA_CONFIG.snapchat;
+            document.getElementById('inputInsta').value = EZWA_CONFIG.instagram;
+            document.getElementById('inputX').value = EZWA_CONFIG.x;
+            document.getElementById('inputEmail').value = EZWA_CONFIG.email;
+            document.getElementById('inputMap').value = EZWA_CONFIG.mapUrl;
+            document.getElementById('customizeModal').style.display = 'flex'; 
+        }
         function closeCustomizeModal() { document.getElementById('customizeModal').style.display = 'none'; }
 
         function saveCustomData() {
             EZWA_CONFIG.brandAr = document.getElementById('inputBrandAr').value;
             EZWA_CONFIG.brandEn = document.getElementById('inputBrandEn').value;
             EZWA_CONFIG.slogan = document.getElementById('inputSlogan').value;
-            EZWA_CONFIG.phoneRaw = document.getElementById('inputPhone').value;
-            EZWA_CONFIG.phone = document.getElementById('inputPhone').value;
+            EZWA_CONFIG.phoneDisplay = document.getElementById('inputPhone').value;
+            EZWA_CONFIG.phoneRaw = document.getElementById('inputPhone').value.split('|')[0].trim();
             EZWA_CONFIG.snapchat = document.getElementById('inputSnap').value;
             EZWA_CONFIG.instagram = document.getElementById('inputInsta').value;
-            EZWA_CONFIG.tiktok = document.getElementById('inputTikTok').value;
             EZWA_CONFIG.x = document.getElementById('inputX').value;
             EZWA_CONFIG.email = document.getElementById('inputEmail').value;
             EZWA_CONFIG.mapUrl = document.getElementById('inputMap').value;
             updateUI();
             closeCustomizeModal();
-            showToast("تم التحديث بنجاح");
+            showToast("تم تحديث البيانات بنجاح");
         }
 
         function showToast(msg) {
