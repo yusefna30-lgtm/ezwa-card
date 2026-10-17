@@ -35,7 +35,6 @@
             padding: 20px 0;
         }
 
-        /* الخلفية السينمائية تماماً مثل الصورة المرجعية */
         .cinema-background {
             position: fixed;
             top: 0;
@@ -50,7 +49,6 @@
             overflow: hidden;
         }
 
-        /* إضاءات ذهبية خلفية محيطة بالبطاقة الزجاجية */
         .ambient-glow-top {
             position: absolute;
             width: 350px;
@@ -75,7 +73,6 @@
             z-index: -1;
         }
 
-        /* حاوية الكارت: لوح زجاجي سميك وشفاف تماماً (Obsidian Crystal Glass Slab) */
         .ezwa-card-container {
             width: var(--card-width);
             min-height: 870px;
@@ -83,8 +80,6 @@
             backdrop-filter: blur(28px) saturate(200%);
             -webkit-backdrop-filter: blur(28px) saturate(200%);
             border-radius: 40px;
-            
-            /* حواف زجاجية مشطوفة مع توهج ذهبي خارجي وداخلي مذهل */
             border: 1.5px solid rgba(223, 177, 91, 0.35);
             box-shadow: 
                 0 45px 110px rgba(0, 0, 0, 0.95),
@@ -93,7 +88,6 @@
                 inset 0 -2px 6px rgba(0, 0, 0, 0.95),
                 inset 2px 0 4px rgba(223, 177, 91, 0.25),
                 inset -2px 0 4px rgba(223, 177, 91, 0.25);
-                
             position: relative;
             padding: 36px 22px 24px 22px;
             display: flex;
@@ -101,7 +95,6 @@
             justify-content: space-between;
         }
 
-        /* لمعة قطرية حادة تعبر الزجاج الكريستالي */
         .ezwa-card-container::before {
             content: '';
             position: absolute;
@@ -115,7 +108,6 @@
             pointer-events: none;
         }
 
-        /* 1. الترويسة العلوية المطابقة للمرجع تماماً (مثبتة الاتجاه لضمان تطابق الأماكن) */
         .card-header {
             display: flex;
             justify-content: space-between;
@@ -124,7 +116,7 @@
             margin-bottom: 24px;
             border-bottom: 1px solid rgba(223, 177, 91, 0.2);
             padding-bottom: 16px;
-            direction: ltr; /* تثبيت لضمان مطابقة اليمين واليسار للصورة المرجعية */
+            direction: ltr;
         }
 
         .brand-left-group {
@@ -191,7 +183,6 @@
             margin-top: 3px;
         }
 
-        /* QR Code & NFC Area (أعلى اليمين تماماً كالمرجع) */
         .qr-nfc-wrapper {
             display: flex;
             flex-direction: column;
@@ -248,7 +239,6 @@
             direction: ltr;
         }
 
-        /* 2. جسم الكارت والأزرار */
         .card-body {
             display: flex;
             flex-direction: column;
@@ -258,7 +248,6 @@
             direction: rtl;
         }
 
-        /* أزرار الاتصال والواتساب العريضة المطابقة تماماً للصورة */
         .action-pill-btn {
             width: 100%;
             height: 60px;
@@ -273,13 +262,13 @@
             color: var(--text-main);
             transition: all 0.3s ease;
             box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+            cursor: pointer;
         }
 
         .action-pill-btn:hover {
             background: rgba(30, 30, 40, 0.85);
             border-color: rgba(223, 177, 91, 0.6);
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.5), 0 0 15px rgba(223, 177, 91, 0.15);
         }
 
         .btn-right-content {
@@ -333,7 +322,6 @@
             font-size: 14px;
         }
 
-        /* شبكة التواصل الاجتماعي الثلاثية (سناب، إنستغرام، X) المطابقة للصورة */
         .social-grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -392,7 +380,6 @@
             direction: ltr;
         }
 
-        /* شبكة الأزرار الثنائية */
         .dual-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -463,7 +450,6 @@
             color: var(--text-muted);
         }
 
-        /* 3. التذييل السفلي المطابق للصورة تماماً */
         .card-footer {
             display: flex;
             flex-direction: column;
@@ -512,9 +498,7 @@
             border: 1px solid rgba(223, 177, 91, 0.5);
             border-radius: 24px;
             width: 100%;
-            max-width: 430px;
-            max-height: 90vh;
-            overflow-y: auto;
+            max-width: 400px;
             padding: 24px;
             box-shadow: 0 25px 50px rgba(0,0,0,0.9);
             direction: rtl;
@@ -542,6 +526,29 @@
             color: #fff;
             font-size: 20px;
             cursor: pointer;
+        }
+
+        .choice-btn {
+            width: 100%;
+            background: rgba(20, 20, 26, 0.9);
+            border: 1px solid rgba(223, 177, 91, 0.4);
+            color: #fff;
+            padding: 14px 18px;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .choice-btn:hover {
+            background: rgba(223, 177, 91, 0.15);
+            border-color: var(--gold-primary);
+            transform: translateY(-2px);
         }
 
         .form-group {
@@ -632,7 +639,8 @@
         </div>
 
         <div class="card-body">
-            <a href="#" class="action-pill-btn" onclick="handleCall(event)">
+            <!-- زر الاتصال المباشر (يفتح قائمة اختيار الرقم) -->
+            <div class="action-pill-btn" onclick="openChoiceModal('call')">
                 <div class="btn-arrow">‹</div>
                 <div class="btn-right-content">
                     <div class="btn-icon-circle">📞</div>
@@ -641,9 +649,10 @@
                         <span class="btn-subtitle" id="uiPhone">+966 50 277 7884 | +966 56 056 4719</span>
                     </div>
                 </div>
-            </a>
+            </div>
 
-            <a href="#" class="action-pill-btn" onclick="handleWhatsapp(event)">
+            <!-- زر الواتساب (يفتح قائمة اختيار الرقم) -->
+            <div class="action-pill-btn" onclick="openChoiceModal('whatsapp')">
                 <div class="btn-arrow">‹</div>
                 <div class="btn-right-content">
                     <div class="btn-icon-circle" style="color: #4ade80;">💬</div>
@@ -652,7 +661,7 @@
                         <span class="btn-subtitle" id="uiWhatsapp">+966 50 277 7884 | +966 56 056 4719</span>
                     </div>
                 </div>
-            </a>
+            </div>
 
             <div class="social-grid-3">
                 <a href="#" class="social-item-col" id="linkX" target="_blank">
@@ -728,9 +737,22 @@
 
     </div>
 
+    <!-- نافذة اختيار الرقم (اتصال أو واتساب) -->
+    <div class="modal-overlay" id="choiceModal" onclick="closeChoiceModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 class="modal-title" id="choiceModalTitle">اختر الرقم للتواصل</h3>
+                <button class="modal-close" onclick="closeChoiceModal()">×</button>
+            </div>
+            <div id="choiceButtonsContainer">
+                <!-- يتم تعبئتها برمجياً -->
+            </div>
+        </div>
+    </div>
+
     <!-- نافذة التخصيص -->
     <div class="modal-overlay" id="customizeModal">
-        <div class="modal-content">
+        <div class="modal-content" onclick="event.stopPropagation()">
             <div class="modal-header">
                 <h3 class="modal-title">تخصيص بيانات علامة عَزْوة</h3>
                 <button class="modal-close" onclick="closeCustomizeModal()">×</button>
@@ -738,7 +760,8 @@
             <div class="form-group"><label>اسم العلامة (عربي):</label><input type="text" id="inputBrandAr" value="عَــزْوَة"></div>
             <div class="form-group"><label>اسم العلامة (إنجليزي):</label><input type="text" id="inputBrandEn" value="E Z W A"></div>
             <div class="form-group"><label>الشعار:</label><input type="text" id="inputSlogan" value="أصالة .. ثقة .. تميّز"></div>
-            <div class="form-group"><label>الأرقام (الهاتف):</label><input type="text" id="inputPhone" value="+966 50 277 7884"></div>
+            <div class="form-group"><label>الرقم الأول:</label><input type="text" id="inputPhone1" value="+966 50 277 7884"></div>
+            <div class="form-group"><label>الرقم الثاني:</label><input type="text" id="inputPhone2" value="+966 56 056 4719"></div>
             <div class="form-group"><label>سناب شات:</label><input type="text" id="inputSnap" value="ezwa_sa"></div>
             <div class="form-group"><label>إنستغرام:</label><input type="text" id="inputInsta" value="ezwa.sa"></div>
             <div class="form-group"><label>منصة X:</label><input type="text" id="inputX" value="ezwa_sa"></div>
@@ -768,8 +791,8 @@
             brandAr: "عَــزْوَة",
             brandEn: "E Z W A",
             slogan: "أصالة .. ثقة .. تميّز",
-            phoneDisplay: "+966 50 277 7884 | +966 56 056 4719",
-            phoneRaw: "+966502777884",
+            phone1: "+966 50 277 7884",
+            phone2: "+966 56 056 4719",
             snapchat: "ezwa_sa",
             instagram: "ezwa.sa",
             x: "ezwa_sa",
@@ -782,8 +805,11 @@
             document.getElementById('uiBrandName').innerText = EZWA_CONFIG.brandAr;
             document.getElementById('uiBrandEn').innerText = EZWA_CONFIG.brandEn;
             document.getElementById('uiSlogan').innerText = EZWA_CONFIG.slogan;
-            document.getElementById('uiPhone').innerText = EZWA_CONFIG.phoneDisplay;
-            document.getElementById('uiWhatsapp').innerText = EZWA_CONFIG.phoneDisplay;
+            
+            const displayPhones = `${EZWA_CONFIG.phone1} | ${EZWA_CONFIG.phone2}`;
+            document.getElementById('uiPhone').innerText = displayPhones;
+            document.getElementById('uiWhatsapp').innerText = displayPhones;
+
             document.getElementById('uiSnap').innerText = EZWA_CONFIG.snapchat;
             document.getElementById('uiInsta').innerText = EZWA_CONFIG.instagram;
             document.getElementById('uiX').innerText = EZWA_CONFIG.x;
@@ -805,17 +831,54 @@
             });
         }
 
-        function handleCall(e) { e.preventDefault(); window.location.href = `tel:${EZWA_CONFIG.phoneRaw}`; }
-        function handleWhatsapp(e) { 
-            e.preventDefault(); 
-            window.open(`https://wa.me/${EZWA_CONFIG.phoneRaw.replace(/[^0-9]/g, '')}`, '_blank'); 
+        // نافذة اختيار الرقم للاتصال أو الواتساب
+        function openChoiceModal(type) {
+            const modal = document.getElementById('choiceModal');
+            const titleElem = document.getElementById('choiceModalTitle');
+            const container = document.getElementById('choiceButtonsContainer');
+            container.innerHTML = "";
+
+            if (type === 'call') {
+                titleElem.innerText = "اختر الرقم للإتصال المباشر";
+                container.innerHTML = `
+                    <a href="tel:${EZWA_CONFIG.phone1.replace(/[^0-9+]/g, '')}" class="choice-btn" onclick="closeChoiceModal()">
+                        <span>📞 الاتصال بالرقم الأول</span>
+                        <span style="direction: ltr; color: var(--gold-primary);">${EZWA_CONFIG.phone1}</span>
+                    </a>
+                    <a href="tel:${EZWA_CONFIG.phone2.replace(/[^0-9+]/g, '')}" class="choice-btn" onclick="closeChoiceModal()">
+                        <span>📞 الاتصال بالرقم الثاني</span>
+                        <span style="direction: ltr; color: var(--gold-primary);">${EZWA_CONFIG.phone2}</span>
+                    </a>
+                `;
+            } else if (type === 'whatsapp') {
+                titleElem.innerText = "اختر الرقم لمراسلة واتساب";
+                const num1Clean = EZWA_CONFIG.phone1.replace(/[^0-9]/g, '');
+                const num2Clean = EZWA_CONFIG.phone2.replace(/[^0-9]/g, '');
+                container.innerHTML = `
+                    <a href="https://wa.me/${num1Clean}?text=مرحباً، أود التواصل مع علامة ${EZWA_CONFIG.brandAr}" target="_blank" class="choice-btn" onclick="closeChoiceModal()">
+                        <span>💬 واتساب الرقم الأول</span>
+                        <span style="direction: ltr; color: #4ade80;">${EZWA_CONFIG.phone1}</span>
+                    </a>
+                    <a href="https://wa.me/${num2Clean}?text=مرحباً، أود التواصل مع علامة ${EZWA_CONFIG.brandAr}" target="_blank" class="choice-btn" onclick="closeChoiceModal()">
+                        <span>💬 واتساب الرقم الثاني</span>
+                        <span style="direction: ltr; color: #4ade80;">${EZWA_CONFIG.phone2}</span>
+                    </a>
+                `;
+            }
+
+            modal.style.display = 'flex';
         }
+
+        function closeChoiceModal() {
+            document.getElementById('choiceModal').style.display = 'none';
+        }
+
         function handleMap(e) { e.preventDefault(); window.open(EZWA_CONFIG.mapUrl, '_blank'); }
         function handleEmail(e) { e.preventDefault(); window.location.href = `mailto:${EZWA_CONFIG.email}`; }
 
         function downloadVCard(e) {
             e.preventDefault();
-            const vCardData = `BEGIN:VCARD\nVERSION:3.0\nFN:${EZWA_CONFIG.brandAr}\nTEL:${EZWA_CONFIG.phoneRaw}\nEMAIL:${EZWA_CONFIG.email}\nEND:VCARD`;
+            const vCardData = `BEGIN:VCARD\nVERSION:3.0\nFN:${EZWA_CONFIG.brandAr}\nTEL:${EZWA_CONFIG.phone1.replace(/[^0-9+]/g, '')}\nTEL:${EZWA_CONFIG.phone2.replace(/[^0-9+]/g, '')}\nEMAIL:${EZWA_CONFIG.email}\nEND:VCARD`;
             const blob = new Blob([vCardData], { type: 'text/vcard' });
             const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
@@ -847,7 +910,8 @@
             document.getElementById('inputBrandAr').value = EZWA_CONFIG.brandAr;
             document.getElementById('inputBrandEn').value = EZWA_CONFIG.brandEn;
             document.getElementById('inputSlogan').value = EZWA_CONFIG.slogan;
-            document.getElementById('inputPhone').value = EZWA_CONFIG.phoneDisplay;
+            document.getElementById('inputPhone1').value = EZWA_CONFIG.phone1;
+            document.getElementById('inputPhone2').value = EZWA_CONFIG.phone2;
             document.getElementById('inputSnap').value = EZWA_CONFIG.snapchat;
             document.getElementById('inputInsta').value = EZWA_CONFIG.instagram;
             document.getElementById('inputX').value = EZWA_CONFIG.x;
@@ -861,8 +925,8 @@
             EZWA_CONFIG.brandAr = document.getElementById('inputBrandAr').value;
             EZWA_CONFIG.brandEn = document.getElementById('inputBrandEn').value;
             EZWA_CONFIG.slogan = document.getElementById('inputSlogan').value;
-            EZWA_CONFIG.phoneDisplay = document.getElementById('inputPhone').value;
-            EZWA_CONFIG.phoneRaw = document.getElementById('inputPhone').value.split('|')[0].trim();
+            EZWA_CONFIG.phone1 = document.getElementById('inputPhone1').value;
+            EZWA_CONFIG.phone2 = document.getElementById('inputPhone2').value;
             EZWA_CONFIG.snapchat = document.getElementById('inputSnap').value;
             EZWA_CONFIG.instagram = document.getElementById('inputInsta').value;
             EZWA_CONFIG.x = document.getElementById('inputX').value;
