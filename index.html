@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عَزْوة | EZWA - الكارت الرقمي الفاخر</title>
+    <title>نبيل النمر | Nabil Alnamer - الكارت الرقمي الفاخر</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -75,7 +75,7 @@
 
         .ezwa-card-container {
             width: var(--card-width);
-            min-height: 870px;
+            min-height: 890px;
             background: rgba(14, 14, 18, 0.55);
             backdrop-filter: blur(28px) saturate(200%);
             -webkit-backdrop-filter: blur(28px) saturate(200%);
@@ -136,18 +136,19 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 6px 20px rgba(0,0,0,0.6), inset 0 1px 3px rgba(223, 177, 91, 0.3);
+            flex-shrink: 0;
         }
 
         .monogram-symbol {
             font-family: 'Amiri', serif;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
             color: var(--gold-primary);
         }
 
         .divider-vertical {
             width: 1px;
-            height: 38px;
+            height: 44px;
             background: linear-gradient(to bottom, transparent, rgba(223, 177, 91, 0.6), transparent);
         }
 
@@ -159,7 +160,7 @@
 
         .brand-name-ar {
             font-family: 'Amiri', serif;
-            font-size: 23px;
+            font-size: 21px;
             font-weight: 700;
             color: #fff;
             letter-spacing: 0.5px;
@@ -167,20 +168,29 @@
         }
 
         .brand-name-en {
-            font-size: 10.5px;
+            font-size: 10px;
             font-weight: 500;
             color: var(--text-muted);
-            letter-spacing: 3.5px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             margin-top: 2px;
             direction: ltr;
+            text-align: right;
+        }
+
+        .brand-role {
+            font-size: 11px;
+            color: var(--gold-primary);
+            font-weight: 600;
+            margin-top: 2px;
         }
 
         .brand-slogan {
-            font-size: 10px;
-            color: var(--gold-primary);
-            letter-spacing: 0.5px;
+            font-size: 9.5px;
+            color: #dcdce6;
+            letter-spacing: 0.3px;
             margin-top: 3px;
+            line-height: 1.3;
         }
 
         .qr-nfc-wrapper {
@@ -248,7 +258,6 @@
             direction: rtl;
         }
 
-        /* تنسيق الأزرار العريضة (الاتصال والواتساب) لضمان التناسق التام */
         .action-pill-btn {
             width: 100%;
             height: 60px;
@@ -454,7 +463,7 @@
             font-family: 'Amiri', serif;
             font-size: 11.5px;
             color: var(--text-muted);
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             direction: ltr;
         }
@@ -616,19 +625,19 @@
 
             <div class="brand-left-group">
                 <div class="brand-titles">
-                    <h1 class="brand-name-ar" id="uiBrandName">عَــزْوَة</h1>
-                    <span class="brand-name-en" id="uiBrandEn">E Z W A</span>
-                    <span class="brand-slogan" id="uiSlogan">أصالة .. ثقة .. تميّز</span>
+                    <h1 class="brand-name-ar" id="uiBrandName">نبيل النمر</h1>
+                    <span class="brand-name-en" id="uiBrandEn">NABIL ALNAMER</span>
+                    <span class="brand-role" id="uiRole">اختصاصي تسويق</span>
+                    <span class="brand-slogan" id="uiSlogan">اول مبتكر دمج تقنية ال NFC بتيشيرت ستريت وير</span>
                 </div>
                 <div class="divider-vertical"></div>
                 <div class="monogram-box">
-                    <span class="monogram-symbol">ع</span>
+                    <span class="monogram-symbol">ن</span>
                 </div>
             </div>
         </div>
 
         <div class="card-body">
-            <!-- زر الاتصال المباشر (أيقونة على اليمين تماماً، نص في المنتصف، سهم على اليسار) -->
             <div class="action-pill-btn" onclick="openChoiceModal('call')">
                 <div class="btn-right-group">
                     <div class="btn-icon-circle">📞</div>
@@ -637,7 +646,6 @@
                 <div class="btn-arrow">‹</div>
             </div>
 
-            <!-- زر الواتساب (أيقونة على اليمين تماماً، نص في المنتصف، سهم على اليسار) -->
             <div class="action-pill-btn" onclick="openChoiceModal('whatsapp')">
                 <div class="btn-right-group">
                     <div class="btn-icon-circle" style="color: #4ade80;">💬</div>
@@ -650,17 +658,17 @@
                 <a href="#" class="social-item-col" id="linkX" target="_blank">
                     <div class="social-icon-box">𝕏</div>
                     <span class="social-name">منصة X</span>
-                    <span class="social-handle" id="uiX">ezwa_sa</span>
+                    <span class="social-handle" id="uiX">nabilalnamer</span>
                 </a>
                 <a href="#" class="social-item-col" id="linkInsta" target="_blank">
                     <div class="social-icon-box">📸</div>
                     <span class="social-name">إنستغرام</span>
-                    <span class="social-handle" id="uiInsta">ezwa.sa</span>
+                    <span class="social-handle" id="uiInsta">nabilalnamer</span>
                 </a>
                 <a href="#" class="social-item-col" id="linkSnap" target="_blank">
                     <div class="social-icon-box">👻</div>
                     <span class="social-name">سناب شات</span>
-                    <span class="social-handle" id="uiSnap">ezwa_sa</span>
+                    <span class="social-handle" id="uiSnap">nabilalnamer</span>
                 </a>
             </div>
 
@@ -714,8 +722,8 @@
         </div>
 
         <div class="card-footer">
-            <span class="footer-brand" id="uiFooterBrand">E Z W A  L U X U R Y</span>
-            <button class="customize-trigger-btn" onclick="openCustomizeModal()">⚙️ تخصيص بيانات العلامة</button>
+            <span class="footer-brand" id="uiFooterBrand">NABIL ALNAMER</span>
+            <button class="customize-trigger-btn" onclick="openCustomizeModal()">⚙️ تخصيص البيانات</button>
         </div>
 
     </div>
@@ -735,18 +743,19 @@
     <div class="modal-overlay" id="customizeModal">
         <div class="modal-content" onclick="event.stopPropagation()">
             <div class="modal-header">
-                <h3 class="modal-title">تخصيص بيانات علامة عَزْوة</h3>
+                <h3 class="modal-title">تخصيص بيانات الكارت</h3>
                 <button class="modal-close" onclick="closeCustomizeModal()">×</button>
             </div>
-            <div class="form-group"><label>اسم العلامة (عربي):</label><input type="text" id="inputBrandAr" value="عَــزْوَة"></div>
-            <div class="form-group"><label>اسم العلامة (إنجليزي):</label><input type="text" id="inputBrandEn" value="E Z W A"></div>
-            <div class="form-group"><label>الشعار:</label><input type="text" id="inputSlogan" value="أصالة .. ثقة .. تميّز"></div>
+            <div class="form-group"><label>الاسم (عربي):</label><input type="text" id="inputBrandAr" value="نبيل النمر"></div>
+            <div class="form-group"><label>الاسم (إنجليزي):</label><input type="text" id="inputBrandEn" value="NABIL ALNAMER"></div>
+            <div class="form-group"><label>المسمى الوظيفي:</label><input type="text" id="inputRole" value="اختصاصي تسويق"></div>
+            <div class="form-group"><label>النبذة التعريفية:</label><input type="text" id="inputSlogan" value="اول مبتكر دمج تقنية ال NFC بتيشيرت ستريت وير"></div>
             <div class="form-group"><label>الرقم الأول:</label><input type="text" id="inputPhone1" value="+966 50 277 7884"></div>
             <div class="form-group"><label>الرقم الثاني:</label><input type="text" id="inputPhone2" value="+966 56 056 4719"></div>
-            <div class="form-group"><label>سناب شات:</label><input type="text" id="inputSnap" value="ezwa_sa"></div>
-            <div class="form-group"><label>إنستغرام:</label><input type="text" id="inputInsta" value="ezwa.sa"></div>
-            <div class="form-group"><label>منصة X:</label><input type="text" id="inputX" value="ezwa_sa"></div>
-            <div class="form-group"><label>البريد:</label><input type="email" id="inputEmail" value="info@ezwa.sa"></div>
+            <div class="form-group"><label>سناب شات:</label><input type="text" id="inputSnap" value="nabilalnamer"></div>
+            <div class="form-group"><label>إنستغرام:</label><input type="text" id="inputInsta" value="nabilalnamer"></div>
+            <div class="form-group"><label>منصة X:</label><input type="text" id="inputX" value="nabilalnamer"></div>
+            <div class="form-group"><label>البريد:</label><input type="email" id="inputEmail" value="info@nabilalnamer.sa"></div>
             <div class="form-group"><label>رابط الخريطة:</label><input type="text" id="inputMap" value="https://maps.app.goo.gl"></div>
             <button class="modal-save-btn" onclick="saveCustomData()">حفظ التعديلات</button>
         </div>
@@ -769,15 +778,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
         let EZWA_CONFIG = {
-            brandAr: "عَــزْوَة",
-            brandEn: "E Z W A",
-            slogan: "أصالة .. ثقة .. تميّز",
+            brandAr: "نبيل النمر",
+            brandEn: "NABIL ALNAMER",
+            role: "اختصاصي تسويق",
+            slogan: "اول مبتكر دمج تقنية ال NFC بتيشيرت ستريت وير",
             phone1: "+966 50 277 7884",
             phone2: "+966 56 056 4719",
-            snapchat: "ezwa_sa",
-            instagram: "ezwa.sa",
-            x: "ezwa_sa",
-            email: "info@ezwa.sa",
+            snapchat: "nabilalnamer",
+            instagram: "nabilalnamer",
+            x: "nabilalnamer",
+            email: "info@nabilalnamer.sa",
             mapUrl: "https://maps.app.goo.gl",
             cardUrl: window.location.href
         };
@@ -785,12 +795,13 @@
         function updateUI() {
             document.getElementById('uiBrandName').innerText = EZWA_CONFIG.brandAr;
             document.getElementById('uiBrandEn').innerText = EZWA_CONFIG.brandEn;
+            document.getElementById('uiRole').innerText = EZWA_CONFIG.role;
             document.getElementById('uiSlogan').innerText = EZWA_CONFIG.slogan;
 
             document.getElementById('uiSnap').innerText = EZWA_CONFIG.snapchat;
             document.getElementById('uiInsta').innerText = EZWA_CONFIG.instagram;
             document.getElementById('uiX').innerText = EZWA_CONFIG.x;
-            document.getElementById('uiFooterBrand').innerText = `${EZWA_CONFIG.brandEn} LUXURY BRAND`;
+            document.getElementById('uiFooterBrand').innerText = EZWA_CONFIG.brandEn;
 
             document.getElementById('linkSnap').href = `https://snapchat.com/add/${EZWA_CONFIG.snapchat}`;
             document.getElementById('linkInsta').href = `https://instagram.com/${EZWA_CONFIG.instagram}`;
@@ -802,7 +813,7 @@
                 text: EZWA_CONFIG.cardUrl,
                 width: 48,
                 height: 48,
-                colorDark: "#050505",
+                colorDark: "#030305",
                 colorLight: "#ffffff",
                 correctLevel: QRCode.CorrectLevel.M
             });
@@ -831,11 +842,11 @@
                 const num1Clean = EZWA_CONFIG.phone1.replace(/[^0-9]/g, '');
                 const num2Clean = EZWA_CONFIG.phone2.replace(/[^0-9]/g, '');
                 container.innerHTML = `
-                    <a href="https://wa.me/${num1Clean}?text=مرحباً، أود التواصل مع علامة ${EZWA_CONFIG.brandAr}" target="_blank" class="choice-btn" onclick="closeChoiceModal()">
+                    <a href="https://wa.me/${num1Clean}?text=مرحباً أستاذ نبيل، أود التواصل معك" target="_blank" class="choice-btn" onclick="closeChoiceModal()">
                         <span>واتساب</span>
                         <span style="direction: ltr; color: #4ade80;">${EZWA_CONFIG.phone1}</span>
                     </a>
-                    <a href="https://wa.me/${num2Clean}?text=مرحباً، أود التواصل مع علامة ${EZWA_CONFIG.brandAr}" target="_blank" class="choice-btn" onclick="closeChoiceModal()">
+                    <a href="https://wa.me/${num2Clean}?text=مرحباً أستاذ نبيل، أود التواصل معك" target="_blank" class="choice-btn" onclick="closeChoiceModal()">
                         <span>واتساب</span>
                         <span style="direction: ltr; color: #4ade80;">${EZWA_CONFIG.phone2}</span>
                     </a>
@@ -854,12 +865,12 @@
 
         function downloadVCard(e) {
             e.preventDefault();
-            const vCardData = `BEGIN:VCARD\nVERSION:3.0\nFN:${EZWA_CONFIG.brandAr}\nTEL:${EZWA_CONFIG.phone1.replace(/[^0-9+]/g, '')}\nTEL:${EZWA_CONFIG.phone2.replace(/[^0-9+]/g, '')}\nEMAIL:${EZWA_CONFIG.email}\nEND:VCARD`;
+            const vCardData = `BEGIN:VCARD\nVERSION:3.0\nFN:${EZWA_CONFIG.brandAr}\nTITLE:${EZWA_CONFIG.role}\nTEL:${EZWA_CONFIG.phone1.replace(/[^0-9+]/g, '')}\nTEL:${EZWA_CONFIG.phone2.replace(/[^0-9+]/g, '')}\nEMAIL:${EZWA_CONFIG.email}\nEND:VCARD`;
             const blob = new Blob([vCardData], { type: 'text/vcard' });
             const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', 'EZWA_Contact.vcf');
+            link.setAttribute('download', 'Nabil_Alnamer.vcf');
             link.click();
             showToast("تم تحميل vCard بنجاح");
         }
@@ -885,6 +896,7 @@
         function openCustomizeModal() { 
             document.getElementById('inputBrandAr').value = EZWA_CONFIG.brandAr;
             document.getElementById('inputBrandEn').value = EZWA_CONFIG.brandEn;
+            document.getElementById('inputRole').value = EZWA_CONFIG.role;
             document.getElementById('inputSlogan').value = EZWA_CONFIG.slogan;
             document.getElementById('inputPhone1').value = EZWA_CONFIG.phone1;
             document.getElementById('inputPhone2').value = EZWA_CONFIG.phone2;
@@ -900,6 +912,7 @@
         function saveCustomData() {
             EZWA_CONFIG.brandAr = document.getElementById('inputBrandAr').value;
             EZWA_CONFIG.brandEn = document.getElementById('inputBrandEn').value;
+            EZWA_CONFIG.role = document.getElementById('inputRole').value;
             EZWA_CONFIG.slogan = document.getElementById('inputSlogan').value;
             EZWA_CONFIG.phone1 = document.getElementById('inputPhone1').value;
             EZWA_CONFIG.phone2 = document.getElementById('inputPhone2').value;
