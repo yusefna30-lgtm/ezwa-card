@@ -639,7 +639,6 @@
         </div>
 
         <div class="card-body">
-            <!-- زر الاتصال المباشر (يفتح قائمة اختيار الرقم) -->
             <div class="action-pill-btn" onclick="openChoiceModal('call')">
                 <div class="btn-arrow">‹</div>
                 <div class="btn-right-content">
@@ -651,7 +650,6 @@
                 </div>
             </div>
 
-            <!-- زر الواتساب (يفتح قائمة اختيار الرقم) -->
             <div class="action-pill-btn" onclick="openChoiceModal('whatsapp')">
                 <div class="btn-arrow">‹</div>
                 <div class="btn-right-content">
@@ -737,16 +735,14 @@
 
     </div>
 
-    <!-- نافذة اختيار الرقم (اتصال أو واتساب) -->
+    <!-- نافذة اختيار الرقم -->
     <div class="modal-overlay" id="choiceModal" onclick="closeChoiceModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
             <div class="modal-header">
-                <h3 class="modal-title" id="choiceModalTitle">اختر الرقم للتواصل</h3>
+                <h3 class="modal-title" id="choiceModalTitle">اختر الرقم</h3>
                 <button class="modal-close" onclick="closeChoiceModal()">×</button>
             </div>
-            <div id="choiceButtonsContainer">
-                <!-- يتم تعبئتها برمجياً -->
-            </div>
+            <div id="choiceButtonsContainer"></div>
         </div>
     </div>
 
@@ -831,7 +827,6 @@
             });
         }
 
-        // نافذة اختيار الرقم للاتصال أو الواتساب
         function openChoiceModal(type) {
             const modal = document.getElementById('choiceModal');
             const titleElem = document.getElementById('choiceModalTitle');
@@ -839,28 +834,28 @@
             container.innerHTML = "";
 
             if (type === 'call') {
-                titleElem.innerText = "اختر الرقم للإتصال المباشر";
+                titleElem.innerText = "اختر الرقم للإتصال";
                 container.innerHTML = `
                     <a href="tel:${EZWA_CONFIG.phone1.replace(/[^0-9+]/g, '')}" class="choice-btn" onclick="closeChoiceModal()">
-                        <span>📞 الاتصال بالرقم الأول</span>
+                        <span>اتصال</span>
                         <span style="direction: ltr; color: var(--gold-primary);">${EZWA_CONFIG.phone1}</span>
                     </a>
                     <a href="tel:${EZWA_CONFIG.phone2.replace(/[^0-9+]/g, '')}" class="choice-btn" onclick="closeChoiceModal()">
-                        <span>📞 الاتصال بالرقم الثاني</span>
+                        <span>اتصال</span>
                         <span style="direction: ltr; color: var(--gold-primary);">${EZWA_CONFIG.phone2}</span>
                     </a>
                 `;
             } else if (type === 'whatsapp') {
-                titleElem.innerText = "اختر الرقم لمراسلة واتساب";
+                titleElem.innerText = "اختر الرقم للواتساب";
                 const num1Clean = EZWA_CONFIG.phone1.replace(/[^0-9]/g, '');
                 const num2Clean = EZWA_CONFIG.phone2.replace(/[^0-9]/g, '');
                 container.innerHTML = `
                     <a href="https://wa.me/${num1Clean}?text=مرحباً، أود التواصل مع علامة ${EZWA_CONFIG.brandAr}" target="_blank" class="choice-btn" onclick="closeChoiceModal()">
-                        <span>💬 واتساب الرقم الأول</span>
+                        <span>واتساب</span>
                         <span style="direction: ltr; color: #4ade80;">${EZWA_CONFIG.phone1}</span>
                     </a>
                     <a href="https://wa.me/${num2Clean}?text=مرحباً، أود التواصل مع علامة ${EZWA_CONFIG.brandAr}" target="_blank" class="choice-btn" onclick="closeChoiceModal()">
-                        <span>💬 واتساب الرقم الثاني</span>
+                        <span>واتساب</span>
                         <span style="direction: ltr; color: #4ade80;">${EZWA_CONFIG.phone2}</span>
                     </a>
                 `;
@@ -931,7 +926,7 @@
             EZWA_CONFIG.instagram = document.getElementById('inputInsta').value;
             EZWA_CONFIG.x = document.getElementById('inputX').value;
             EZWA_CONFIG.email = document.getElementById('inputEmail').value;
-            EZWA_CONFIG.mapUrl = document.getElementById('inputMap').value;
+            EZVAL_CONFIG.mapUrl = document.getElementById('inputMap').value;
             updateUI();
             closeCustomizeModal();
             showToast("تم تحديث البيانات بنجاح");
